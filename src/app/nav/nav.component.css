@@ -1,0 +1,17 @@
+.intents-tool-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  width: 100vw;
+}
+
+.btns{
+    list-style: none;
+}
+
+.icons {
+    display: inline-flex;
+    float: right;
+}   
