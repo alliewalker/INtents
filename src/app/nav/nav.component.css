@@ -9,11 +9,21 @@
 
 .title{
     font-size: 2.2em;
-    
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Anton', sans-serif;
+
+}
+
+a.title{
+    font-size: 2.2em;
+    text-decoration: none;
+    color: #000000
 }
 
 .btns{
     list-style: none;
+    margin-right: 3em;
 }
 
 .icons {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  title: string = 'INtents'
+  title: string = 'INtents';
+
+  showDelay = new FormControl(700);
+  hideDelay = new FormControl(500);
+
   constructor() { }
 
   ngOnInit() {

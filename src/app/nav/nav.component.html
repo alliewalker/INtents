@@ -1,25 +1,25 @@
 <mat-toolbar color='secondary' class='intents-tool-bar'>
 
     <mat-toolbar-row>
-      <span class="title">{{ title }}</span>
+      <a class="title" matTooltip="Home" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Home page link." routerLink="/home">{{ title }}</a>
 
       <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
         <ul class="btns" fxLayout fxLayoutGap="1.250em">
-          <button mat-icon-button>
+          <button mat-icon-button matTooltip="Menu" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Menu section button">
             <mat-icon>menu</mat-icon>
           </button>
-          <li fxHide.xs>
-            <button mat-icon-button>
+          <!-- <li fxHide.xs>
+            <button mat-icon-button matTooltip="?" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="? section button">
               <mat-icon>settings</mat-icon>
             </button>
-          </li>
+          </li> -->
           <li fxHide.xs>
-            <button mat-icon-button>
-              <mat-icon>help_outline</mat-icon>
+            <button mat-icon-button matTooltip="About" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="About section button">
+              <mat-icon routerLink="/about">help_outline</mat-icon>
             </button>
           </li>
           <li>
-            <button mat-icon-button >
+            <button mat-icon-button matTooltip="Login" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Login/Signup section button">
               <mat-icon>person_outline</mat-icon>
             </button>
             <mat-menu #auth="matMenu">

@@ -1,0 +1,25 @@
+.AbtContainer {
+    width: 35vw;
+    height: 35vh;
+    background-color: #d6d8d8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em 1em 2em 1em;
+    border-radius: .7em;
+    font-family: 'Anton', sans-serif;
+    font-weight: lighter;
+
+}
+
+.AbtHeading {
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+    font-size: 1.2em;
+}
