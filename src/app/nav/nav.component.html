@@ -1,13 +1,13 @@
-<mat-toolbar color='primary' class='intents-tool-bar'>
+<mat-toolbar color='secondary' class='intents-tool-bar'>
 
     <mat-toolbar-row>
-      <span>{{ title }}</span>
+      <span class="title">{{ title }}</span>
 
-      <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
       <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
         <ul class="btns" fxLayout fxLayoutGap="1.250em">
+          <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+          </button>
           <li fxHide.xs>
             <button mat-icon-button>
               <mat-icon>settings</mat-icon>
