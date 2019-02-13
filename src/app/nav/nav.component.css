@@ -37,12 +37,13 @@ a.title{
     right: 0;
     z-index: 998;
     width: 100vw;
-    box-shadow: -.1em -.1em -.1em #000000;
-
+    display: flex;
+    justify-content: center;
 }
 
 .footbtns {
     list-style: none;
+    margin-right: 33em;
 }
 
 .footicon {

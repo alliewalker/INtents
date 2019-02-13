@@ -1,6 +1,6 @@
 .AbtContainer {
     width: 35vw;
-    height: 35vh;
+    height: 40vh;
     background-color: #d6d8d8;
     position: absolute;
     left: 50%;
@@ -21,11 +21,11 @@
 
 .content {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .closeBtn {
     position: relative;
-    top: -9em;
+    top: -7em;
     left: 15vw;
 }
