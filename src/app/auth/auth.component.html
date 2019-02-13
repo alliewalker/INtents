@@ -3,7 +3,7 @@
       
    <form #loginForm (submit)="onSubmit($event)" *ngIf="isLogin">
       <div class="inputs">
-         <h2>Login</h2>
+         <img src='../../assets/INTents_logo 1_lowercase.png'height="90">
       <mat-form-field>
          <input matInput placeholder="email">
       </mat-form-field>
@@ -11,14 +11,15 @@
          <input matInput placeholder="password">
       </mat-form-field>
       </div>
+      <button mat-raised-button>Submit</button>
    </form>
 
 
    <form #signupForm (submit)="onSubmit($event)" *ngIf="!isLogin">
         
       <div class="inputs">
-         <h2>Signup</h2>
-         <mat-form-field>
+         <img src='../../assets/INTents_logo 1_lowercase.png'height="90">
+            <mat-form-field>
             <input matInput placeholder="email">
          </mat-form-field>
          <mat-form-field>
@@ -28,8 +29,11 @@
             <input matInput placeholder="confirm password">
          </mat-form-field>
       </div>
+      <button mat-raised-button>Submit</button>
+
    </form>
 
    <button mat-raised-button (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
-   
+
+
 </div>
