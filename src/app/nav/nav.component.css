@@ -1,11 +1,11 @@
 .toolBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 998;
-  width: 100vw;
-  box-shadow: .1em .1em .1em #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    width: 100vw;
+    box-shadow: .1em .1em .1em #000000;
 }
 
 .title{
@@ -29,4 +29,23 @@ a.title{
 .icons {
     display: inline-flex;
     float: right;
+}
+
+.footerToolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    width: 100vw;
+}
+
+.footbtns {
+    list-style: none;
+}
+
+.footicon {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
