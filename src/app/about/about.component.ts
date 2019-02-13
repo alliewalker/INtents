@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  showDelay = new FormControl(700);
+  hideDelay = new FormControl(500);
+  
   constructor() { }
 
   ngOnInit() {
