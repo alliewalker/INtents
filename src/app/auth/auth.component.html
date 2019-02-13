@@ -1,0 +1,35 @@
+
+<div id="wrapper">
+      
+   <form #loginForm (submit)="onSubmit($event)" *ngIf="isLogin">
+      <div class="inputs">
+         <h2>Login</h2>
+      <mat-form-field>
+         <input matInput placeholder="email">
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput placeholder="password">
+      </mat-form-field>
+      </div>
+   </form>
+
+
+   <form #signupForm (submit)="onSubmit($event)" *ngIf="!isLogin">
+        
+      <div class="inputs">
+         <h2>Signup</h2>
+         <mat-form-field>
+            <input matInput placeholder="email">
+         </mat-form-field>
+         <mat-form-field>
+            <input matInput placeholder="password">
+         </mat-form-field>
+         <mat-form-field>
+            <input matInput placeholder="confirm password">
+         </mat-form-field>
+      </div>
+   </form>
+
+   <button mat-raised-button (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
+   
+</div>
