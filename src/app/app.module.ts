@@ -20,14 +20,14 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
-// import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
     AboutComponent,
-    // ContactFormComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,5 @@ import { AboutComponent } from './about/about.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  // entryComponents: [contact-form]
 })
 export class AppModule { }

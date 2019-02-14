@@ -1,7 +1,7 @@
 .AbtContainer {
     width: 35vw;
     height: 40vh;
-    background-color: #d6d8d8;
+    background-color: hsla(180, 2%, 84%, 0.9);
     position: absolute;
     left: 50%;
     top: 50%;
