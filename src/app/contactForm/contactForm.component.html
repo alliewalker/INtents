@@ -1,22 +1,19 @@
-<div>
-    <div mat-dialog-title>
-        <h2>Contact Us!</h2>
+<div class="contactContainer">
+    <div class="ContactHeading">
+        <h1>Contact Us!</h1>
     </div>
-    <mat-dialog-content class="mat-typography">
-            <button mat-icon-button matTooltip="Close" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Close contact section button">
-                <mat-icon routerLink='/'>exit_to_app</mat-icon>
-            </button>
-        <div class="contactForm">
-            <form method="POST" action="https://formspree.io/justis710@gmail.com">
-                <input mat-input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" type="textarea" placeholder="Message" required></textarea>
-                
-                <mat-dialog-actions align="end">
-                    <button mat-button type="submit" [mat-dialog-close]='true'>Send Message</button>
-                    <button mat-button type="button" mat-dialog-close>Cancel</button>
-                </mat-dialog-actions>
-                
-            </form>
+    <div class='contact'>d
+        <div class="closeBtn">
         </div>
-    </mat-dialog-content>
+        <div class="contactForm">
+            <mat-form-field (submit)="onSubmit();" class="contactInput" action="https://formspree.io/justis710@gmail.com" method="POST"target='blank'>
+                <input mat-input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" type="textarea" placeholder="Message" required></textarea>
+            </mat-form-field>
+        <div>
+            <button mat-button type="submit" value="send"><mat-icon>email</mat-icon></button>
+            <button mat-button type="button"><mat-icon routerLink='/'>exit_to_app</mat-icon></button>
+        </div>
+        </div>
+    </div>
 </div>

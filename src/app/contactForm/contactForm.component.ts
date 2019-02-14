@@ -1,10 +1,6 @@
 import { Component, Inject } from '@angular/core';
-// import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material'
+import { FormControl } from '@angular/forms';
 
-// export interface DialogData {
-//   email: string;
-//   message: string;
-// }
 
 @Component({
   selector: 'app-contact-form',
@@ -13,29 +9,10 @@ import { Component, Inject } from '@angular/core';
 })
 export class ContactFormComponent {
 
-  // constructor(public dialog: MatDialog) {}
-  
+  showDelay = new FormControl(700);
+  hideDelay = new FormControl(500);
 
-  // openContact() {
-  //   const contactRef = this.dialog.open(ContactFormComponent); 
-  //   contactRef.afterClosed().subscribe(result => {
-  //     console.log('message sent');
-  //   });
-  // }
-
- 
+  onSubmit(){
+    
+  }
 }
-
-// @Component({
-//   selector: 'contact-form',
-//   templateUrl: 'contactForm.component.html',
-//   styleUrls: ['./contactForm.component.css']
-// })
-// export class contactForm{
-//   constructor(public contactRef: MatDialogRef<ContactFormComponent>,
-//     @Inject(MAT_DIALOG_DATA) public data: DialogData){}
-
-//      onNoClick(): void {
-//     this.contactRef.close()
-//   }
-// };

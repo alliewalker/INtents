@@ -1,7 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
-// import { MatDialog } from '@angular/material';
-// import { contactForm } from '../contactForm/contactForm.component';
 
 @Component({
   selector: 'app-nav',
@@ -14,13 +12,6 @@ export class NavComponent{
   showDelay = new FormControl(700);
   hideDelay = new FormControl(500);
 
-  constructor(/*public contact: MatDialog*/) { }
+  constructor() { }
 
-  // openContact() {
-  //   const contactRef = this.contact.open(contactForm); 
-
-  //   contactRef.afterClosed().subscribe(result => {
-  //     console.log('message sent');
-  //   });
-  // }
 }
