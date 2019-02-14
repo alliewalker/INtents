@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactFormComponent } from './contactForm/contactForm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,9 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MatToolbarModule,
     BrowserAnimationsModule, 
   ],
+  exports: [ContactFormComponent],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ContactFormComponent]
 })
 export class AppModule { }

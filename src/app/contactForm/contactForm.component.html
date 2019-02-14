@@ -3,6 +3,9 @@
         <h2>Contact Us!</h2>
     </div>
     <mat-dialog-content class="mat-typography">
+            <button mat-icon-button matTooltip="Close" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Close contact section button">
+                <mat-icon routerLink='/'>exit_to_app</mat-icon>
+            </button>
         <div class="contactForm">
             <form method="POST" action="https://formspree.io/justis710@gmail.com">
                 <input mat-input type="email" name="email" placeholder="Your Email" required>
