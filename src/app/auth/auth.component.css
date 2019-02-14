@@ -1,16 +1,17 @@
 #wrapper {
     width: 100vw;
-    height: 375px;
-    background: rgba(160, 194, 211, 0.8);
+    height: 400px;
+    background: rgba(160, 194, 211, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    /* padding: 10px 30px; */
     box-sizing: border-box;
     position: relative;
-    top: 200px;
+    top: 180px;
     margin-left: -1em;
+    
 
 }
 
@@ -21,8 +22,8 @@
     justify-content: center;
     align-items: center;   
     position: relative;
-    /* top: 50px;
-    height: 600px; */
+    top: 10px;
+    height: 320px;
 
 }
 

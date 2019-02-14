@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -17,7 +16,6 @@ import { RouterModule, Routes } from '@angular/router';
   declarations: [
     AppComponent,
     AuthComponent,
-    AboutComponent
   ],
   imports: [
     BrowserModule,

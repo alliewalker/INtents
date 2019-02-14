@@ -3,22 +3,22 @@
       
    <form #loginForm (submit)="onSubmit($event)" *ngIf="isLogin">
       <div class="inputs">
-         <img src='../../assets/INTents_logo 1_lowercase.png'height="90">
-      <mat-form-field>
-         <input matInput placeholder="email">
+         <img src='../../assets/INTents_logo 1_lowercase.png'height="40%">
+         <mat-form-field color="primary">
+         <input matInput placeholder="email" >
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field color="primary">
          <input matInput placeholder="password">
       </mat-form-field>
       </div>
-      <button mat-raised-button>Submit</button>
+      <button mat-raised-button color="warn">Submit</button>
    </form>
 
 
    <form #signupForm (submit)="onSubmit($event)" *ngIf="!isLogin">
         
       <div class="inputs">
-         <img src='../../assets/INTents_logo 1_lowercase.png'height="90">
+         <img src='../../assets/INTents_logo 1_lowercase.png'height="40%" id="logo">
             <mat-form-field>
             <input matInput placeholder="email">
          </mat-form-field>
@@ -29,11 +29,11 @@
             <input matInput placeholder="confirm password">
          </mat-form-field>
       </div>
-      <button mat-raised-button>Submit</button>
+      <button mat-raised-button color="warn">Submit</button>
 
    </form>
 
-   <button mat-raised-button (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
+   <button mat-raised-button color="warn" (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
 
 
 </div>
