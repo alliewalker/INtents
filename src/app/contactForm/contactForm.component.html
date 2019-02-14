@@ -6,11 +6,16 @@
         <div class="closeBtn">
         </div>
         <div class="contactForm">
+            <div>
             <mat-form-field (submit)="onSubmit();" class="contactInput" action="https://formspree.io/justis710@gmail.com" method="POST"target='blank'>
                 <input mat-input type="email" name="email" placeholder="Your Email" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
                 <textarea name="message" type="textarea" placeholder="Message" required></textarea>
             </mat-form-field>
-        <div>
+        <div class="buttons">
             <button mat-button type="submit" value="send"><mat-icon>email</mat-icon></button>
             <button mat-button type="button"><mat-icon routerLink='/'>exit_to_app</mat-icon></button>
         </div>
