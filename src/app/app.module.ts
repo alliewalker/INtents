@@ -8,9 +8,11 @@ import {
   MatToolbarModule, 
   MatMenuModule, 
   MatTooltipModule, 
+  MatFormFieldModule,
   MatDialogModule, 
   MAT_DIALOG_DATA
 } from '@angular/material';
+
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -21,9 +23,11 @@ import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contactForm/contactForm.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
     HomeComponent,
     NavComponent,
     AboutComponent,
@@ -43,6 +47,10 @@ import { ContactFormComponent } from './contactForm/contactForm.component';
     MatSelectModule,
     MatToolbarModule,
     BrowserAnimationsModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+
   ],
   exports: [ContactFormComponent],
   providers: [],
