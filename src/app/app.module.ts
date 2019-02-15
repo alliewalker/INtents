@@ -1,33 +1,60 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { 
+  MatInputModule,
+  MatButtonModule, 
+  MatSelectModule, 
+  MatIconModule, 
+  MatToolbarModule, 
+  MatMenuModule, 
+  MatTooltipModule, 
+  MatFormFieldModule,
+  MatDialogModule, 
+  MAT_DIALOG_DATA
+} from '@angular/material';
+
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule, Routes } from '@angular/router';
-
-
+import { AboutComponent } from './about/about.component';
+import { ContactFormComponent } from './contactForm/contactForm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
+    HomeComponent,
+    NavComponent,
+    AboutComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatToolbarModule,
+    BrowserAnimationsModule, 
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-    RouterModule
+    MatButtonModule
 
   ],
+  exports: [ContactFormComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ContactFormComponent]
 })
 export class AppModule { }

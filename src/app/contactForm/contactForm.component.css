@@ -1,0 +1,33 @@
+.contactContainer {
+
+}
+
+.contactHeading {
+    
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 30%;
+    width: 15%;
+    position: absolute;
+    padding: 6em;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsla(180, 2%, 84%, 0.9);
+    border-radius: .7em;
+}
+
+.closeBtn {
+    position: relative;
+    top: -7em;
+    left: 15vw;
+}
+
+.contactInput {
+    width: 50%;
+}
