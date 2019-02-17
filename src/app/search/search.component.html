@@ -1,0 +1,24 @@
+<div style="text-align: center" id="body">
+<h1>Here you can search for campgrounds, different parks, and
+  get up-to-date with the latest alerts.
+</h1>
+
+
+
+
+
+<select [(ngModel)]="dropdown" class="dropdown">
+  <option value="parks">Parks</option>
+  <option value="campgrounds">Campgrounds</option>
+  <option value="alerts">Alerts</option>
+</select>
+
+<input type="text" [(ngModel)]="search" class="input">
+
+<button class="button" (click)="onClick()">Search</button>
+
+<p *ngFor="let item of items">
+  {{ item }}
+</p>
+
+</div>

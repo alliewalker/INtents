@@ -23,6 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
+import { SearchComponent } from './search/search.component';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,7 @@ import { AuthComponent } from './auth/auth.component';
     NavComponent,
     AboutComponent,
     ContactFormComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,9 @@ import { AuthComponent } from './auth/auth.component';
     MatToolbarModule,
     MatFormFieldModule,
     BrowserAnimationsModule, 
+    MatInputModule,
+    MatButtonModule,
+    HttpClient
   ],
   exports: [ContactFormComponent],
   providers: [],
