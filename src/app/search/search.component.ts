@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-search',
@@ -14,20 +14,26 @@ export class SearchComponent {
   constructor(private http: HttpClient) { }
 
   onClick(event) {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', 'y1G80Jj5pBdIII9wtlJKwBZmQgGbcRWTvaDY0Fmv');
     if(this.dropdown === 'campgrounds'){
-      this.http.get(`api.nps.gov/api/v1/campgrounds/?search=${this.search}`)
-        .subscribe(({ results }) => {
-          this.items = results;
+      this.http.get(`https://api.nps.gov/api/v1/campgrounds?q=${this.search}`, {
+        headers: headers
+      })
+        .subscribe((data) => {
+          // this.items = data;
+          console.log(data)
         })
     } else if(this.dropdown === 'parks') {
-      this.http.get(`api.nps.gov/api/v1/parks/?search=${this.search}`)
-        .subscribe(({ results }) => {
-          this.items = results
+      this.http.get(`https://www.api.nps.gov/api/v1/parks?q=${this.search}`)
+        .subscribe((data) => {
+          // this.items = results
         })
     } else if(this.dropdown === 'alerts') {
-      this.http.get(`api.nps.gov/api/v1/alerts/?search=${this.search}`)
-        .subscribe(({ results }) => {
-          this.items = results;
+      this.http.get(`https://www.api.nps.gov/api/v1/alerts?q=${this.search}`)
+        .subscribe((data) => {
+          // this.items = results;
         })
     } 
   }

@@ -9,7 +9,7 @@ html, body {
 body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: url('../src/assets/intent3.jpg');
+    /* background-image: url('./assets/intent3.jpg'); */
     background-repeat: no-repeat;
     background-position: absolute;
     background-size: cover;
