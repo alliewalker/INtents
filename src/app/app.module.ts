@@ -24,7 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { HttpClient } from '@angular/common/http';
     BrowserAnimationsModule, 
     MatInputModule,
     MatButtonModule,
-    HttpClient
+    // HttpClient
   ],
   exports: [ContactFormComponent],
   providers: [],
