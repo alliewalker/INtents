@@ -5,10 +5,10 @@
       <div class="inputs">
          <img src='../../assets/INTents_logo 1_lowercase.png' height="40%">
          <mat-form-field color="primary">
-         <input matInput placeholder="email" >
+         <input matInput placeholder="email" name="email" [(ngModel)]="email">
       </mat-form-field>
       <mat-form-field color="primary">
-         <input matInput type='password' placeholder="password">
+         <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
       </mat-form-field>
       </div>
       <button mat-raised-button color="warn">Submit</button>
@@ -20,13 +20,13 @@
       <div class="inputs">
          <img src='../../assets/INTents_logo 1_lowercase.png' height="40%" id="logo">
             <mat-form-field>
-            <input matInput placeholder="email">
+            <input matInput placeholder="email" name="email" [(ngModel)]="email">
          </mat-form-field>
          <mat-form-field>
-            <input matInput type='password' placeholder="password">
+            <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
          </mat-form-field>
          <mat-form-field>
-            <input matInput type='password' placeholder="confirm password">
+            <input matInput type="password" placeholder="confirm password" name="confirm" [(ngModel)]="confirm">
          </mat-form-field>
       </div>
       <button mat-raised-button color="warn">Submit</button>
