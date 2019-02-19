@@ -16,22 +16,26 @@ export class SearchComponent {
 
   onClick(event) {
     if(this.dropdown === 'campgrounds'){
-      this.http.get(`${this.apiURL}/campgrounds?q=${this.search}`)
+      this.http.get<HasData>(`${this.apiURL}/campgrounds?q=${this.search}`)
         .subscribe(({ data }) => {
           console.log(data);
           this.items = data;
         })
     } else if(this.dropdown === 'parks') {
-      this.http.get(`${this.apiURL}/parks/?q=${this.search}`)
+      this.http.get<HasData>(`${this.apiURL}/parks/?q=${this.search}`)
         .subscribe(({ data }) => {
           this.items = data
         })
     } else if(this.dropdown === 'alerts') {
-      this.http.get(`${this.apiURL}/alerts/?q=${this.search}`)
+      this.http.get<HasData>(`${this.apiURL}/alerts/?q=${this.search}`)
         .subscribe(({ data }) => {
           this.items = data;
         })
     } 
   }
 
+}
+
+interface HasData {
+  data: Array<any>
 }
