@@ -22,6 +22,7 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: 0% 420%;
+    background-repeat: no-repeat;
 }
 
 .title{
