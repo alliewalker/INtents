@@ -1,3 +1,15 @@
+body {
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: url('../../assets/intent3.jpg');
+    background-repeat: no-repeat;
+    background-position: absolute;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50%;
+    width: 50%;
+}
+
 #wrapper {
     width: 100vw;
     height: 400px;
