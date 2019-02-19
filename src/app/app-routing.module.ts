@@ -4,14 +4,16 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
-// import { AuthGuard } from './auth/auth.guard';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
-  { path: '', component: AuthComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactFormComponent },
+  {path: '', component: AuthComponent },
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactFormComponent},
+  {path: 'search', component: SearchComponent }
+
 ];
 
 @NgModule({

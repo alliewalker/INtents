@@ -3,10 +3,6 @@
   get up-to-date with the latest alerts.
 </h1>
 
-
-
-
-
 <select [(ngModel)]="dropdown" class="dropdown">
   <option value="parks">Parks</option>
   <option value="campgrounds">Campgrounds</option>
@@ -15,10 +11,13 @@
 
 <input type="text" [(ngModel)]="search" class="input">
 
-<button class="button" (click)="onClick">Search</button>
+<button mat-raised-button color="primary"class="button" (click)="onClick()">Search</button>
 
-<p *ngFor="let item of items">
-  {{ item }}
-</p>
+<span *ngFor="let item of items">
+  <h2>{{ item.name }}</h2> <br/> 
+  <div class="description">
+  {{ item.description }}
+</div>
+</span>
 
 </div>

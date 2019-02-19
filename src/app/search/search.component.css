@@ -1,0 +1,14 @@
+.dropdown{
+    width: 130px;
+    height: 22px;
+    margin: 3px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    left: 720px;
+}
