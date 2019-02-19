@@ -8,11 +8,10 @@ import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
-  {path: '', component: AuthComponent },
-  {path: 'home', component: HomeComponent },
-  {path: 'about', component: AboutComponent},
-  {path: 'contact', component: ContactFormComponent},
-
+  { path: '', component: AuthComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactFormComponent },
 ];
 
 @NgModule({
