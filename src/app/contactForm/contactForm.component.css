@@ -1,10 +1,7 @@
 /* .contactContainer {
 
-}
-
-.contactHeading {
-    
 } */
+
 
 .contactForm {
     display: flex;
@@ -18,16 +15,14 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: hsla(180, 2%, 84%, 0.9);
+    background-color: #CAE4dB;
     border-radius: .7em;
+    font-family: 'Anton', sans-serif;
+
 }
 
 .closeBtn {
     position: relative;
     top: -7em;
     left: 15vw;
-}
-
-.contactInput {
-    width: 50%;
 }
