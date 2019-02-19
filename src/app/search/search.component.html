@@ -1,3 +1,4 @@
+<div class="search">
 <div style="text-align: center" id="searchBody">
 <h1>Here you can search for campgrounds, different parks, and
   get up-to-date with the latest alerts.
@@ -10,14 +11,15 @@
 </select>
 
 <input type="text" [(ngModel)]="search" class="input">
-
+<br>
 <button mat-raised-button color="primary"class="button" (click)="onClick()">Search</button>
-
+<br>
 <span *ngFor="let item of items">
   <h2>{{ item.name }}</h2> <br/> 
   <div class="description">
   {{ item.description }}
 </div>
 </span>
+</div>
 
 </div>

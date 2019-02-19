@@ -1,7 +1,7 @@
 .logo {
     height: 6em;
     width: 7em;
-    left: 3em;
+    left: 1.5em;
     position: fixed;
 }
 
@@ -65,7 +65,7 @@ a.title{
 
 .footbtns {
     list-style: none;
-    margin-right: 33em;
+    margin-right: 36em;
 
 }
 
