@@ -6,14 +6,4 @@ html, body {
      height: 100%;
  }
 
-body {
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: url('../src/assets/intent3.jpg');
-    background-repeat: no-repeat;
-    background-position: absolute;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 50%;
-    width: 50%;
-}
+
