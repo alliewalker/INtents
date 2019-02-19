@@ -7,29 +7,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  apiURL: string = 'http://api.nps.gov/api/v1';
   dropdown: string = 'campgrounds';
   search: string = '';
   items: Array<any> = [];
 
   constructor(private http: HttpClient) { }
 
-  // onClick(event) {
-  //   if(this.dropdown === 'campgrounds'){
-  //     this.http.get(`api.nps.gov/api/v1/campgrounds/?search=${this.search}`)
-  //       .subscribe(({ results }) => {
-  //         this.items = results;
-  //       })
-  //   } else if(this.dropdown === 'parks') {
-  //     this.http.get(`api.nps.gov/api/v1/parks/?search=${this.search}`)
-  //       .subscribe(({ results }) => {
-  //         this.items = results
-  //       })
-  //   } else if(this.dropdown === 'alerts') {
-  //     this.http.get(`api.nps.gov/api/v1/alerts/?search=${this.search}`)
-  //       .subscribe(({ results }) => {
-  //         this.items = results;
-  //       })
-  //   } 
-  // }
+  onClick(event) {
+    if(this.dropdown === 'campgrounds'){
+      this.http.get(`${this.apiURL}/campgrounds?q=${this.search}`)
+        .subscribe(({ data }) => {
+          console.log(data);
+          this.items = data;
+        })
+    } else if(this.dropdown === 'parks') {
+      this.http.get(`${this.apiURL}/parks/?q=${this.search}`)
+        .subscribe(({ data }) => {
+          this.items = data
+        })
+    } else if(this.dropdown === 'alerts') {
+      this.http.get(`${this.apiURL}/alerts/?q=${this.search}`)
+        .subscribe(({ data }) => {
+          this.items = data;
+        })
+    } 
+  }
 
 }

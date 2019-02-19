@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let BASE_URL = 'http://localhost:3000'
+let BASE_URL = 'http://localhost:4200'
 
 @Injectable({
   providedIn: 'root'
