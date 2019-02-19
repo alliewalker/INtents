@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service'
-import { FormGroup } from '@angular/forms';
+// import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +8,6 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  form: FormGroup;
   email = '';
   password = '';
   confirm = '';
@@ -29,7 +28,7 @@ export class AuthComponent implements OnInit {
  handleLogin() {
     this.apiService.login(this.email, this.password)
       .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token)
+        sessionStorage.setItem('token', token);
       })
  }
 
