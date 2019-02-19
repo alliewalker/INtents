@@ -1,19 +1,20 @@
 <div class="contactContainer">
-    <div class="ContactHeading">
+    <div class="closeBtn"></div>
+    <form class="contactForm" action="https://formspree.io/justis710@gmail.com" method="POST"target='blank'>
         <h1>Contact Us!</h1>
-    </div>
-    <div class='contact'>d
-        <div class="closeBtn">
-        </div>
-        <div class="contactForm">
-            <mat-form-field (submit)="onSubmit();" class="contactInput" action="https://formspree.io/justis710@gmail.com" method="POST"target='blank'>
-                <input mat-input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" type="textarea" placeholder="Message" required></textarea>
+            <mat-form-field>
+                <input matInput type="email" name="email" placeholder="Your Email" required>
             </mat-form-field>
-        <div>
+        
+            <mat-form-field>
+                <textarea matInput name="message" type="textarea" placeholder="Message" required></textarea>
+            </mat-form-field>
+
+        <div class="buttons">
             <button mat-button type="submit" value="send"><mat-icon>email</mat-icon></button>
-            <button mat-button type="button"><mat-icon routerLink='/'>exit_to_app</mat-icon></button>
+            <button mat-button type="button"><mat-icon routerLink='/home'>exit_to_app</mat-icon></button>
         </div>
-        </div>
-    </div>
+    </form>
 </div>
+
+<app-nav></app-nav>

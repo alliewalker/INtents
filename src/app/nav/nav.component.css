@@ -2,6 +2,7 @@
     height: 6em;
     width: 7em;
     left: 3em;
+    position: fixed;
 }
 
 .toolBar {
@@ -21,7 +22,9 @@
     background-image: url('../../assets/adventure-camp-camping-699558.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-position: 0% 420%;
+    background-position: 100% 330%;
+    background-repeat: no-repeat;
+    
 }
 
 .title{
@@ -49,18 +52,21 @@ a.title{
 
 .footerToolbar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 998;
-    width: 100vw;
     display: flex;
     justify-content: center;
+    bottom: 0;
+    left: 0;
+    /* right: 0; */
+    /* z-index: 998; */
+    width: 100vw;
+    height: 2vh;
+
 }
 
 .footbtns {
     list-style: none;
     margin-right: 33em;
+
 }
 
 .footicon {

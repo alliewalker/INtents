@@ -1,39 +1,39 @@
+<div class="bgImage">
+   <div id="wrapper">
 
-<div id="wrapper">
-      
-   <form #loginForm (submit)="onSubmit($event)" *ngIf="isLogin">
-      <div class="inputs">
-         <img src='../../assets/INTents_logo 1_lowercase.png'height="40%">
-         <mat-form-field color="primary">
-         <input matInput placeholder="email" name="email" [(ngModel)]="email">
-      </mat-form-field>
-      <mat-form-field color="primary">
-         <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
-      </mat-form-field>
-      </div>
-      <button mat-raised-button color="warn">Submit</button>
-   </form>
-
-
-   <form #signupForm (submit)="onSubmit($event)" *ngIf="!isLogin">
-        
-      <div class="inputs">
-         <img src='../../assets/INTents_logo 1_lowercase.png'height="40%" id="logo">
-            <mat-form-field>
+      <form #loginForm (submit)="onSubmit($event)" *ngIf="isLogin">
+         <div class="inputs">
+            <img src='../../assets/INTents_logo 1_lowercase.png' height="40%">
+            <mat-form-field color="primary">
             <input matInput placeholder="email" name="email" [(ngModel)]="email">
          </mat-form-field>
-         <mat-form-field>
+         <mat-form-field color="primary">
             <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
          </mat-form-field>
-         <mat-form-field>
-            <input matInput type="password" placeholder="confirm password" name="confirm" [(ngModel)]="confirm">
-         </mat-form-field>
-      </div>
-      <button mat-raised-button color="warn">Submit</button>
-
-   </form>
-
-   <button mat-raised-button color="warn" (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
+         </div>
+         <button mat-raised-button color="warn">Submit</button>
+      </form>
 
 
+      <form #signupForm (submit)="onSubmit($event)" *ngIf="!isLogin">
+
+         <div class="inputs">
+            <img src='../../assets/INTents_logo 1_lowercase.png' height="40%" id="logo">
+               <mat-form-field>
+               <input matInput placeholder="email" name="email" [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput type="password" placeholder="confirm password" name="confirm" [(ngModel)]="confirm">
+            </mat-form-field>
+         </div>
+         <button mat-raised-button color="warn" >Submit</button>
+
+      </form>
+
+      <button mat-raised-button color="warn" (click)="isLogin = !isLogin">{{ isLogin ? "switch to signup" : "switch to Login" }}</button>
+   </div>
 </div>
+

@@ -7,12 +7,11 @@ import {
   MatIconModule, 
   MatToolbarModule, 
   MatMenuModule, 
-  MatTooltipModule, 
   MatFormFieldModule,
+  MatTooltipModule, 
   MatDialogModule, 
   MAT_DIALOG_DATA
 } from '@angular/material';
-
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -30,8 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     HomeComponent,
+    AuthComponent,
     NavComponent,
     AboutComponent,
     ContactFormComponent,
@@ -50,8 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSelectModule,
     MatToolbarModule,
-    BrowserAnimationsModule, 
     MatFormFieldModule,
+    BrowserAnimationsModule, 
     MatInputModule,
     MatButtonModule,
     HttpClientModule

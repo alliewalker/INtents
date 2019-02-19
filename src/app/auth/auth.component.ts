@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service'
+// import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   email = '';
   password = '';
   confirm = '';
@@ -14,6 +15,9 @@ export class AuthComponent {
 
   constructor(private apiService: ApiService) { }
   
+  ngOnInit(){
+  }
+
   onSubmit(event) {
     event.preventDefault()
 
@@ -24,7 +28,7 @@ export class AuthComponent {
  handleLogin() {
     this.apiService.login(this.email, this.password)
       .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token)
+        sessionStorage.setItem('token', token);
       })
  }
 

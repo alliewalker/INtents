@@ -6,9 +6,9 @@
 
       <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
         <ul class="btns" fxLayout fxLayoutGap="1.250em">
-          <button mat-icon-button matTooltip="Menu" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Menu section button">
+          <!-- <button mat-icon-button matTooltip="Menu" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Menu section button">
             <mat-icon>menu</mat-icon>
-          </button>
+          </button> -->
           <!-- <li fxHide.xs>
             <button mat-icon-button matTooltip="?" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="? section button">
               <mat-icon>settings</mat-icon>
@@ -20,15 +20,15 @@
             </button>
           </li>
           <li>
-            <button mat-icon-button matTooltip="Login" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Login/Signup section button">
-              <mat-icon>person_outline</mat-icon>
+            <button mat-icon-button matTooltip="Logout" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Logout  button">
+              <mat-icon routerLink=''>person_outline</mat-icon>
             </button>
-            <mat-menu #auth="matMenu">
+            <!-- <mat-menu #auth="matMenu">
               <button mat-menu-item>
                 <mat-icon>exit_to_app</mat-icon>
                 <span>Sign out</span>
               </button>
-            </mat-menu>
+            </mat-menu> -->
           </li>
     
         </ul>
@@ -54,3 +54,4 @@
     </mat-toolbar-row>
 
 </mat-toolbar>
+
