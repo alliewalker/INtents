@@ -27,8 +27,12 @@ import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { TripTableComponent } from './trip-table/trip-table.component';
 import { CalendarComponent } from './trip-table/calendar/calendar.component';
+=======
+import { ReviewsComponent } from './reviews/reviews.component';
+>>>>>>> 9937994fb7dfb880d890fa9d4649eb8807964cd4
 
 @NgModule({
   declarations: [
@@ -39,8 +43,12 @@ import { CalendarComponent } from './trip-table/calendar/calendar.component';
     AboutComponent,
     ContactFormComponent,
     SearchComponent,
+<<<<<<< HEAD
     TripTableComponent,
     CalendarComponent,
+=======
+    ReviewsComponent,
+>>>>>>> 9937994fb7dfb880d890fa9d4649eb8807964cd4
   ],
   imports: [
     BrowserModule,

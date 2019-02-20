@@ -10,5 +10,17 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    left: 720px;
+    left: 270px;
+    width: 20%;
+}
+
+.search{
+    border-radius: 10px;
+    background-color: #CAE4dB;
+    width: 650px;
+    position: relative;
+    margin: 30px;
+    padding: 10px;
+    top: 140px;
+
 }

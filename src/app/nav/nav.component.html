@@ -6,16 +6,30 @@
 
       <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
         <ul class="btns" fxLayout fxLayoutGap="1.250em">
+<<<<<<< HEAD
           <li >
+=======
+
+          <li fxHide.xs>
+>>>>>>> 9937994fb7dfb880d890fa9d4649eb8807964cd4
             <button mat-icon-button matTooltip="About" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="About section button">
               <mat-icon routerLink="/about">help_outline</mat-icon>
             </button>
           </li>
+
+          <li>
+              <button mat-icon-button matTooltip="Reviews" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Reviews section button">
+                  <mat-icon routerLink="/reviews">forum</mat-icon>
+              </button>
+                </li>
+                
           <li>
             <button mat-icon-button matTooltip="Logout" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Logout  button">
-              <mat-icon routerLink=''>person_outline</mat-icon>
+              <mat-icon (click)="logout()">exit_to_app</mat-icon>
             </button>
           </li>
+
+
     
         </ul>
       </div>
