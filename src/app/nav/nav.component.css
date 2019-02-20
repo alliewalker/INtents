@@ -22,14 +22,8 @@
     background-image: url('../../assets/adventure-camp-camping-699558.jpg');
     background-attachment: fixed;
     background-size: cover;
-<<<<<<< HEAD
     background-position: 0% 420%;
     background-repeat: no-repeat;
-=======
-    background-position: 100% 330%;
-    background-repeat: no-repeat;
-    
->>>>>>> 6edaa41aa2d7b442d86cc5319f4a6522e135cc5e
 }
 
 .title{
@@ -70,7 +64,7 @@ a.title{
 
 .footbtns {
     list-style: none;
-    margin-right: 33em;
+    margin-right: 48%;
 
 }
 

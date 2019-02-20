@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+// import { DataService } from '../services/data.service';
 
-export interface Trip{
-  date: Date;
-  location: String;
-  numberPeople: Number
-}
+// export interface Trip{
+//   date: Date;
+//   location: String;
+//   numberPeople: Number
+// }
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +13,7 @@ export interface Trip{
 })
 export class HomeComponent implements OnInit {
   
-  dataSource: [];
+  // dataSource: [];
 
   constructor() { }
 

@@ -13,7 +13,7 @@ import {
   MatDialogModule, 
   MAT_DIALOG_DATA
 } from '@angular/material';
-
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -27,6 +27,8 @@ import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TripTableComponent } from './trip-table/trip-table.component';
+import { CalendarComponent } from './trip-table/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,15 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ContactFormComponent,
     SearchComponent,
+    TripTableComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    NgbDatepickerModule,
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
@@ -61,7 +66,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   exports: [ContactFormComponent],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [ContactFormComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
