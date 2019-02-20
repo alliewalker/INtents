@@ -1,5 +1,8 @@
-/* .calendar {
-} */
+.calendar {
+  position: relative;
+  padding: 4.5% 2% 0 2%;
+  border-style: none;
+}
 
 .custom-day {
   text-align: center;

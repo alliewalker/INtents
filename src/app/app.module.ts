@@ -13,7 +13,7 @@ import {
   MatDialogModule, 
   MAT_DIALOG_DATA
 } from '@angular/material';
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbDatepickerModule, NgbPagination,  } from '@ng-bootstrap/ng-bootstrap'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -48,6 +48,7 @@ import { CalendarComponent } from './trip-table/calendar/calendar.component';
     FlexLayoutModule,
     FormsModule,
     NgbDatepickerModule,
+    /*NgbPagination,*/
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
@@ -64,7 +65,7 @@ import { CalendarComponent } from './trip-table/calendar/calendar.component';
     HttpClientModule
 
   ],
-  exports: [ContactFormComponent],
+exports: [/*ContactFormComponent*/],
   providers: [],
   bootstrap: [AppComponent]
 })
