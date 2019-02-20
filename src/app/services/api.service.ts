@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let BASE_URL = 'http://localhost:4200'
+let BASE_URL = 'http://localhost:3000'
 
 @Injectable({
   providedIn: 'root'
@@ -36,3 +36,4 @@ interface HasToken {
 interface HasUser {
   user: object
 }
+

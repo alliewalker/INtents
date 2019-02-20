@@ -25,6 +25,7 @@ import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ContactFormComponent,
     SearchComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,
