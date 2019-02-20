@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let BASE_URL = 'http://localhost:4200'
+let BASE_URL = 'https://jd-intentserver.herokuapp.com/'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   login(email, password) {
-    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}user/login`, {
       user:{
         email: email,
         password: password
@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   signup(email, password) {
-    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}user/create`, {
       user: {
         email: email,
         password: password
