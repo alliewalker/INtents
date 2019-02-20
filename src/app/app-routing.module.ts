@@ -9,14 +9,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
 
 
 const routes: Routes = [
-<<<<<<< HEAD
-  {path: '', component: AuthComponent },
-  {path: 'home', component: HomeComponent},
-=======
   {path: 'auth', component: AuthComponent },
   {path: 'home', component: HomeComponent},
   {path: 'search', component: SearchComponent },
->>>>>>> 9937994fb7dfb880d890fa9d4649eb8807964cd4
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactFormComponent},
   {path: 'reviews', component: ReviewsComponent}

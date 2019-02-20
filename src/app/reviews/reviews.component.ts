@@ -15,5 +15,5 @@ export class ReviewsComponent implements OnInit {
   }
 }
 
-  this.router.navigateByUrl('/reviews');
+  // this.router.navigateByUrl('/reviews');
 
