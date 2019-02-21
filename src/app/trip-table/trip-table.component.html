@@ -14,19 +14,21 @@
       <th scope="col">Date</th>
       <th scope="col">Location</th>
       <th scope="col">Number of People</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let date of dates$ | async">  
-      <th scope="row">{{ date.id }}</th>
+    <tr *ngFor="let trip of trip$ | async">  
+      <th scope="row">{{ trip.id }}</th>
+      <td>{{ trip.date }}</td>
+      <td>{{ trip.location }}</td>
+      <td>{{ trip.numberPeople }}</td>
       <td>
-        <!-- {{}} -->
+        <button mat-icon-button><mat-icon>update</mat-icon></button>
       </td>
       <td>
-      
-      </td>
-      <td>
-
+        <button mat-icon-button><mat-icon>delete_outline</mat-icon></button>
       </td>
     </tr>
     </tbody>

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let BASE_URL = 'http://localhost:3000'
+// let BASE_URL = 'http://localhost:3000'
+
+let BASE_URL = 'https://jd-intentserver.herokuapp.com/'
 
 @Injectable({
   providedIn: 'root'
