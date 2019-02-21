@@ -27,16 +27,18 @@ export class AuthComponent implements OnInit {
 
  handleLogin() {
     this.apiService.login(this.email, this.password)
-      .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token);
+      .subscribe(data => {
+        sessionStorage.setItem("token", data.sessionToken)
+        console.log(data, data.sessionToken);
+        sessionStorage.setItem("admin", data.user.adminStatus) //saves the admin
       })
  }
 
 handleSignup() {
   if(this.password === this.confirm){
     this.apiService.signup(this.email, this.password)
-      .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token)
+      .subscribe(data => {
+        console.log(data);
       })
   } else {
     alert('passwords do not match')

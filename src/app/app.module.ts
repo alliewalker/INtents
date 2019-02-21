@@ -29,6 +29,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TripTableComponent } from './trip-table/trip-table.component';
 import { CalendarComponent } from './trip-table/calendar/calendar.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CalendarComponent } from './trip-table/calendar/calendar.component';
     SearchComponent,
     TripTableComponent,
     CalendarComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
