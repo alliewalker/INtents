@@ -23,11 +23,19 @@
     "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "^7.2.5",
     "@angular/material": "^7.3.2",
+<<<<<<< HEAD
     "@angular/platform-browser": "^7.2.5",
     "@angular/platform-browser-dynamic": "^7.2.5",
     "@angular/router": "^7.2.5",
     "@ng-bootstrap/ng-bootstrap": "^4.0.3",
     "core-js": "^2.6.5",
+=======
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.3",
+    "core-js": "^2.5.4",
+>>>>>>> 6899d622a3f97b48d31e3e12f72513f639e1eae8
     "hammerjs": "^2.0.8",
     "node-sass": "^4.11.0",
     "rxjs": "~6.3.3",
