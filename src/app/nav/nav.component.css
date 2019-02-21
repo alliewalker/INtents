@@ -16,15 +16,26 @@
     height: 7em;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
-#image.toolBar {
+/* #image.toolBar {
     background-image: url('../../assets/adventure-camp-camping-699558.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: 100% 345%;
     background-repeat: no-repeat;
     
+} */
+
+.mat-toolbar-row {
+    padding: 0;
+}
+
+#brand {
+    position: absolute;
+    width: 100vw;
+    bottom: -50px;
 }
 
 .title{

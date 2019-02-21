@@ -15,5 +15,4 @@ export class ReviewsComponent implements OnInit {
   }
 }
 
-  this.router.navigateByUrl('/reviews');
 
