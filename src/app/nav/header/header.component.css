@@ -1,0 +1,59 @@
+.logo {
+    height: 6em;
+    width: 7em;
+    left: 1.5em;
+    position: fixed;
+}
+
+.toolBar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    width: 100vw;
+    /* box-shadow: .1em .1em .1em #000000; */
+    height: 7em;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.mat-toolbar-row {
+    padding: 0;
+}
+
+#brand {
+    position: absolute;
+    width: 100vw;
+    bottom: -90px;
+    /* TODO: mess with moving the image to the left to help with logo visibility */
+}
+
+.title{
+    font-size: 2.2em;
+    text-decoration: none;
+    color: #000000;
+}
+
+a.title{
+    font-size: 2.2em;
+    text-decoration: none;
+    color: #000000
+}
+
+.btns{
+    list-style: none;
+    margin-right: 3em;
+}
+
+.btns button {
+    background-color: rgba(202, 228, 219, .8);
+}
+
+.icons {
+    display: inline-flex;
+    float: right;
+    color: #00303F;
+    font-size: 36px; 
+}

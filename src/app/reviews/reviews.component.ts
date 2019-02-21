@@ -9,10 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ReviewsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    console.log('anything')
+   }
 
   ngOnInit() {
   }
 }
-
 

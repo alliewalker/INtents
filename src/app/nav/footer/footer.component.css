@@ -1,0 +1,20 @@
+.footerToolbar {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    /* right: 0; */
+    /* z-index: 998; */
+    width: 100vw;
+}
+
+.footbtns {
+    list-style: none;
+    margin-right: 36em;
+
+}
+
+.footicon {
+    display: flex;
+    color: #DCAE1D;
+}
