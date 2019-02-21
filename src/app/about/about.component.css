@@ -19,6 +19,7 @@
     font-size: 1.5em;
     color: #252525;
     text-align: center;
+    font-family: 'Muli', sans-serif;
 }
 
 .content {
@@ -33,4 +34,8 @@
     position: relative;
     top: -1em;
     left: 15vw;
+}
+
+h1{
+    font-family: 'Muli', sans-serif;
 }

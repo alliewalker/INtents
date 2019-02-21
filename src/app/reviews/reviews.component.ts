@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
+  starRating: number = 1;
 
   constructor(private router: Router) {
     console.log('anything')
