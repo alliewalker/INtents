@@ -9,7 +9,7 @@
     "e2e": "ng e2e",
     "preinstall" : "npm install -g @angular/cli",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/intents"
+    "start": "serve -s dist/Intents"
   },
   "private": true,
   "dependencies": {
