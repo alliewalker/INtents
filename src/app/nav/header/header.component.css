@@ -3,6 +3,8 @@
     width: 7em;
     left: 1.5em;
     position: fixed;
+    background-color: rgba(245, 245, 245, .75);
+
 }
 
 .toolBar {
