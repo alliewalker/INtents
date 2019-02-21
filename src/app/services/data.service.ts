@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BASE_URL } from '../../environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -8,7 +9,7 @@ const httpOptions = {
   })
 }
 
-const baseUrl = 'https://jd-intentserver.herokuapp.com/'
+// const baseUrl = 'https://jd-intentserver.herokuapp.com/'
 
 // const baseUrl = 'http://localhost:3000'
 @Injectable({
@@ -20,18 +21,18 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   createTrip(): Observable<any>{
-    return this.http.post(`${baseUrl}trip/make`, httpOptions)
+    return this.http.post(`${BASE_URL}trip/make`, httpOptions)
   }
 
   getTrip(): Observable<any>{
-    return this.http.get(`${baseUrl}trip/read`, httpOptions)
+    return this.http.get(`${BASE_URL}trip/read`, httpOptions)
   }
 
   updateTrip(): Observable<any>{
-    return this.http.put(`${baseUrl}trip/promote/:id`, httpOptions)
+    return this.http.put(`${BASE_URL}trip/promote/:id`, httpOptions)
   }
 
   removeTrip(): Observable<any>{
-    return this.http.delete(`${baseUrl}trip/remove/:id`, httpOptions);
+    return this.http.delete(`${BASE_URL}trip/remove/:id`, httpOptions);
   }
 }
