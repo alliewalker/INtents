@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
-// import {FormsModule} from '@angular/forms';
-
+import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -13,7 +12,7 @@ export class CalendarComponent {
   fromDate: NgbDate;
   toDate: NgbDate;
 
-  constructor(calendar: NgbCalendar) {
+  constructor(calendar: NgbCalendar, private api: ApiService) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
