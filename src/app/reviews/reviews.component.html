@@ -1,19 +1,43 @@
-<div class="container">
-<h1>Add a Review</h1>
+<form class="container" (submit)="onSubmit($event)">
+    <h1>Add a Review</h1>
 
-<mat-form-field>
-    <textarea rows="6" matInput placeholder="Type your review here"></textarea>
-</mat-form-field>
+    <mat-form-field>
+        <textarea rows="6" matInput name="message" placeholder="Type your review here" [(ngModel)]="message"></textarea>
+    </mat-form-field>
 
-<div id="stars">
-    <mat-icon [style.color]="starRating >= 1 ? '#DCAE1D' : 'black'" (click)="starRating = 1">star_rate</mat-icon>
-    <mat-icon [style.color]="starRating >= 2 ? '#DCAE1D' : 'black'" (click)="starRating = 2">star_rate</mat-icon>
-    <mat-icon [style.color]="starRating >= 3 ? '#DCAE1D' : 'black'" (click)="starRating = 3">star_rate</mat-icon>
-    <mat-icon [style.color]="starRating >= 4 ? '#DCAE1D' : 'black'" (click)="starRating = 4">star_rate</mat-icon>
-    <mat-icon [style.color]="starRating >= 5 ? '#DCAE1D' : 'black'" (click)="starRating = 5">star_rate</mat-icon>
+    <div class="stars">
+        <mat-icon [style.color]="starRating >= 1 ? '#DCAE1D' : 'black'" (click)="starRating = 1">star_rate</mat-icon>
+        <mat-icon [style.color]="starRating >= 2 ? '#DCAE1D' : 'black'" (click)="starRating = 2">star_rate</mat-icon>
+        <mat-icon [style.color]="starRating >= 3 ? '#DCAE1D' : 'black'" (click)="starRating = 3">star_rate</mat-icon>
+        <mat-icon [style.color]="starRating >= 4 ? '#DCAE1D' : 'black'" (click)="starRating = 4">star_rate</mat-icon>
+        <mat-icon [style.color]="starRating >= 5 ? '#DCAE1D' : 'black'" (click)="starRating = 5">star_rate</mat-icon>
+    </div>
+    <button mat-raised-button color="primary"class="button">Submit</button>
+</form>
+
+<div class="container2">
+    <h1>Look at your reviews</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of reviews">
+                <td><div class="stars">
+                        <mat-icon [style.color]="review.starRating >= 1 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                        <mat-icon [style.color]="review.starRating >= 2 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                        <mat-icon [style.color]="review.starRating >= 3 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                        <mat-icon [style.color]="review.starRating >= 4 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                        <mat-icon [style.color]="review.starRating >= 5 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                    </div></td>
+                <td>{{ review.review }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-    <button mat-raised-button color="primary"class="button" (click)="onClick()">Submit</button>
-</div>
-
 
 

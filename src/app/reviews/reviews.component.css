@@ -1,17 +1,29 @@
 .container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     background-color: #CAE4dB;
     width: 40vw;
     border-radius: 10px;
+}
 
+.container2{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CAE4dB;
+    width: 40vw;
+    border-radius: 10px;
+    margin: 50px;  
+}
+
+th{
+    font-family: 'Muli', sans-serif;
 }
 
 h1 {
     color: black;
     text-align: center;
-    padding: 20px;
     font-family: 'Muli', sans-serif;
 }
 
@@ -21,15 +33,17 @@ h1 {
     margin: 30px;
 }
 
-#stars{
+.stars{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 30%;
     cursor: pointer;
     
 }
 
 .button {
-    margin: 10px;
+    margin: 25px;
+}
+
+table{
+    width: 100%;
 }
