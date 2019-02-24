@@ -25,7 +25,7 @@ export class CalendarComponent {
     } else {
       this.toDate = null;
       this.fromDate = date;
-    }
+    } 
   }
 
   isHovered(date: NgbDate) {

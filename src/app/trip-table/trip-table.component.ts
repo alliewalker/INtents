@@ -10,18 +10,20 @@ import { ApiService } from '../services/api.service';
 export class TripTableComponent implements OnInit{
   date: string = '';
   location: string = '';
-  numberPeople: number;
+  numberPeople: number = 1;
+  trips: Array<any> = [];
+
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-  }
 
+  }
   onSubmit(event){
     console.log('click')
     this.api.createTrip(this.date, this.location, this.numberPeople)
-    .subscribe((data) => {
-      console.log(data)
-      // this.trips.push(data)
+    .subscribe(({ created }) => {
+      console.log(created)
+      this.trips.push(created)
     })
   }
 
@@ -31,4 +33,7 @@ export class TripTableComponent implements OnInit{
   //   console.log('update')
   // }
 
+  // onRemove(event){
+  //   console.log('delete')
+  // }
 }

@@ -3,7 +3,7 @@
 <form>
   <div class="form-group form-inline">
     <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
-    <input mat-input class="form-control ml-2" type="text" [(ngModel)]="numberPeople" placeholder="# of People"/>
+    <input mat-input class="form-control ml-2" type="text" name="numberOfPeople" [(ngModel)]="numberPeople" placeholder="# of People"/>
     <button mat-icon-button type="submit" (click)="onSubmit($event)"><mat-icon>create</mat-icon></button>
   </div>
 </form>
