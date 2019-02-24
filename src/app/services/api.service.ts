@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { BASE_URL } from '../../environments/environment.prod'
 
-let BASE_URL = 'http://localhost:3000'
-
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
+let BASE_URL = 'http://localhost:3000'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     authorization: sessionStorage.getItem("token")
   })
 };
+
 
 @Injectable({
   providedIn: 'root'
@@ -42,9 +42,9 @@ export class ApiService {
     }, httpOptions)
     request.subscribe(({ token }) => {
       httpOptions.headers=new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-    })
-    return request;
-  }
+  })
+  return request;
+}
 
   createReview(rating: number, message: string) {
     return this.http.post<HasCreated<Review>>(`${BASE_URL}/review/make`, {
