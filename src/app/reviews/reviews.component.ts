@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
-
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
@@ -18,7 +17,7 @@ export class ReviewsComponent implements OnInit {
   ngOnInit() {
     this.api.getReviews()
     .subscribe((data)=> {
-      this.reviews = data.reviews;
+      this.reviews = data;
     })
   }
 

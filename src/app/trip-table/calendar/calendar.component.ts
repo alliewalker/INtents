@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../../services/api.service';
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -8,13 +9,13 @@ import { ApiService } from '../../services/api.service';
 })
 export class CalendarComponent {
 
-  hoveredDate: NgbDate;
-  fromDate: NgbDate;
-  toDate: NgbDate;
+  public hoveredDate: NgbDate;
+  public fromDate: NgbDate;
+  public toDate: NgbDate;
 
   constructor(calendar: NgbCalendar, private api: ApiService) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.toDate = calendar.getNext(calendar.getToday(), 'd');
   }
 
   onDateSelection(date: NgbDate) {
