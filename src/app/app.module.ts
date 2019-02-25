@@ -25,11 +25,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './home/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TripTableComponent } from './trip-table/trip-table.component';
 import { CalendarComponent } from './trip-table/calendar/calendar.component';
-import { AdminComponent } from './admin/admin.component';
+//import { AdminComponent } from './admin/admin.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './nav/header/header.component';
+import { FooterComponent } from './nav/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { AdminComponent } from './admin/admin.component';
     SearchComponent,
     TripTableComponent,
     CalendarComponent,
-    AdminComponent,
+    //AdminComponent,
+    ReviewsComponent,
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

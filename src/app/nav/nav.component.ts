@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +14,11 @@ export class NavComponent{
   showDelay = new FormControl(700);
   hideDelay = new FormControl(500);
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  logout(){
+    sessionStorage.clear()
+    this.router.navigateByUrl('/auth')
+  }
 }
+

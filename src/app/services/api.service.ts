@@ -1,40 +1,43 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BASE_URL } from '../../environments/environment.prod'
 
 import {Observable, of} from "rxjs"
 import {catchError, map, tap} from "rxjs/operators"
-
-let BASE_URL = 'http://localhost:3000'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private handleError<T> (operation = "operation", result?: T){
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of (result as T);
-    }
-  }
+  // private baseURL = 'http://localhost:3000/';
+
+  // private handleError<T> (operation = "operation", result?: T){
+  //   return (error: any): Observable<T> => {
+  //     console.error(error);
+  //     return of (result as T);
+  //   }
+  // }
 
   constructor(private http: HttpClient) { }
 
   login(email, password) {
-    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}user/login`, {
       user:{
         email: email,
         password: password
       }
-    }).pipe(
-      catchError(this.handleError("login")),
-      tap(data => {
-        return data
-      })
-    )
+    })
+    // .pipe(
+    //   catchError(this.handleError("login")),
+    //   tap(data => {
+    //     console.log(data);
+    //     return data
+    //   })
+    // )
   }
 
   signup(email, password) {
-    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}user/create`, {
       user: {
         email: email,
         password: password,

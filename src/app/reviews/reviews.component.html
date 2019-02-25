@@ -1,0 +1,10 @@
+<h1>Reviews</h1>
+<div *ngIf = "this.adminStatus == 'true'">
+    <button type = "button" (click) = "openDiv()">Admin Delete</button>
+</div>
+
+<form (submit) = "sendDeleteFetch(id.value); false; id.value = ''" id = "adminDeleteDiv" style = "display: none">
+    <label>Enter ID of review to delete</label>
+    <input #id/>
+    <button type = "submit">Send</button>
+</form>

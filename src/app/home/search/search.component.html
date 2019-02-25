@@ -1,23 +1,26 @@
+<div class="search">
 <div style="text-align: center" id="searchBody">
-<h1>Here you can search for campgrounds, different parks, and
-  get up-to-date with the latest alerts.
-</h1>
+<h2>Here you can search for campgrounds, different parks, and
+  stay up-to-date with the latest alerts.
+</h2>
 
 <select [(ngModel)]="dropdown" class="dropdown">
   <option value="parks">Parks</option>
   <option value="campgrounds">Campgrounds</option>
   <option value="alerts">Alerts</option>
+  <!-- <option value="events">Events</option> -->
 </select>
 
 <input type="text" [(ngModel)]="search" class="input">
-
-<button mat-raised-button color="primary"class="button" (click)="onClick()">Search</button>
-
+<br>
+<button mat-raised-button color="primary"class="button" (click)="onClick($event)">Search</button>
+<br>
 <span *ngFor="let item of items">
   <h2>{{ item.name }}</h2> <br/> 
   <div class="description">
   {{ item.description }}
 </div>
 </span>
+</div>
 
 </div>

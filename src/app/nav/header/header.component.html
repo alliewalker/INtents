@@ -1,0 +1,31 @@
+<mat-toolbar color='secondary' id="image" class='toolBar'>
+  <img id="brand" src="../../assets/catalina.jpg">
+  <img src="../../assets/INtents_honey.png" class='logo' alt="">
+  <a class="title" matTooltip="Home" [matTooltipShowDelay]="500" [matTooltipHideDelay]="500" aria-label="Home page link." routerLink="/home"></a>
+
+  <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
+    <ul class="btns" fxLayout fxLayoutGap="1.250em">
+
+      <li fxHide.xs>
+        <button mat-icon-button matTooltip="About" [matTooltipShowDelay]="500" [matTooltipHideDelay]="500" aria-label="About section button">
+          <mat-icon routerLink="/about">help_outline</mat-icon>
+        </button>
+      </li>
+
+      <li>
+          <button mat-icon-button matTooltip="Reviews" [matTooltipShowDelay]="500" [matTooltipHideDelay]="500" aria-label="Reviews section button">
+              <mat-icon routerLink="/reviews">forum</mat-icon>
+          </button>
+            </li>
+
+      <li>
+        <button mat-icon-button matTooltip="Logout" [matTooltipShowDelay]="500" [matTooltipHideDelay]="500" aria-label="Logout  button">
+          <mat-icon (click)="logout()">exit_to_app</mat-icon>
+        </button>
+      </li>
+
+
+
+    </ul>
+  </div>
+</mat-toolbar>

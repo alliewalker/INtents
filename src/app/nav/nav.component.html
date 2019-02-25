@@ -1,35 +1,31 @@
 <mat-toolbar color='secondary' id="image" class='toolBar'>
-
-    <mat-toolbar-row>
+    <mat-toolbar-row>   
+      <img id="brand" src="../../assets/catalina.jpg">
       <img src="../../assets/INtents_honey.png" class='logo' alt="">
       <a class="title" matTooltip="Home" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Home page link." routerLink="/home"></a>
 
       <div class='icons' fxFlex fxLayout fxLayoutAlign="flex-end">
         <ul class="btns" fxLayout fxLayoutGap="1.250em">
-          <!-- <button mat-icon-button matTooltip="Menu" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Menu section button">
-            <mat-icon>menu</mat-icon>
-          </button> -->
-          <!-- <li fxHide.xs>
-            <button mat-icon-button matTooltip="?" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="? section button">
-              <mat-icon>settings</mat-icon>
-            </button>
-          </li> -->
-          <li >
+
+          <li fxHide.xs>
             <button mat-icon-button matTooltip="About" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="About section button">
               <mat-icon routerLink="/about">help_outline</mat-icon>
             </button>
           </li>
+
+          <li>
+              <button mat-icon-button matTooltip="Reviews" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Reviews section button">
+                  <mat-icon routerLink="/reviews">forum</mat-icon>
+              </button>
+                </li>
+
           <li>
             <button mat-icon-button matTooltip="Logout" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Logout  button">
-              <mat-icon routerLink=''>person_outline</mat-icon>
+              <mat-icon (click)="logout()">exit_to_app</mat-icon>
             </button>
-            <!-- <mat-menu #auth="matMenu">
-              <button mat-menu-item>
-                <mat-icon>exit_to_app</mat-icon>
-                <span>Sign out</span>
-              </button>
-            </mat-menu> -->
           </li>
+
+
     
         </ul>
       </div>

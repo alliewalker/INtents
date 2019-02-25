@@ -10,5 +10,15 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    left: 720px;
+    left: 270px;
+    width: 20%;
+}
+
+.search{
+    border-radius: 10px;
+    background-color: rgba(202, 228, 219);
+    width: 650px;
+    position: relative;
+    padding: 10px;
+
 }

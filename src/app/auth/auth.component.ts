@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service'
 // import { FormGroup } from '@angular/forms';
 
@@ -13,7 +14,7 @@ export class AuthComponent implements OnInit {
   confirm = '';
   isLogin: boolean = true;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
   
   ngOnInit(){
   }
@@ -27,18 +28,21 @@ export class AuthComponent implements OnInit {
 
  handleLogin() {
     this.apiService.login(this.email, this.password)
-      .subscribe(data => {
-        sessionStorage.setItem("token", data.sessionToken)
-        console.log(data, data.sessionToken);
-        sessionStorage.setItem("admin", data.user.adminStatus) //saves the admin
+      .subscribe(({ token, user }) => {
+        // console.log(token, user);
+        // sessionStorage.setItem('adminStatus', user.adminStatus);
+        sessionStorage.setItem('token', token);
+        this.router.navigateByUrl('/home');
       })
  }
 
 handleSignup() {
   if(this.password === this.confirm){
     this.apiService.signup(this.email, this.password)
-      .subscribe(data => {
-        console.log(data);
+      .subscribe(({token, user}) => {
+        // console.log(user)
+        sessionStorage.setItem('token', token)
+        this.router.navigateByUrl('/home');
       })
   } else {
     alert('passwords do not match')
