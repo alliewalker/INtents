@@ -71,7 +71,7 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get<Trip[]>(`${BASE_URL}/trip/read/`, httpOptions)
+    return this.http.get(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
   removeTrip(){

@@ -24,7 +24,7 @@ export class TripTableComponent implements OnInit{
   ngOnInit() {
     this.api.getTrips()
     .subscribe((data) => {
-      this.trips = data
+      this.trips = data.trip
     })
   }
   
@@ -32,8 +32,10 @@ export class TripTableComponent implements OnInit{
     console.log(this.date)
     this.api.createTrip(this.date, this.location, this.numberPeople)
     .subscribe(({ created }) => {
+      // console.log(this.trips)
       console.log(created)
       this.trips.push(created)
+      console.log(this.trips)
     })
   }
 

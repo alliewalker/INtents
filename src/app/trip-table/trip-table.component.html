@@ -1,5 +1,5 @@
 <div class="tripPlan">
-<app-calendar (onDateChange)="onDateChange($event)"></app-calendar>
+<app-calendar></app-calendar>
 <form>
   <div class="form-group form-inline">
     <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
@@ -20,11 +20,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let trip of trip">  
+    <tr *ngFor="let trip of trips">  
       <th scope="row">{{ trip.id }}</th>
-      <td>{{ trip.trips }}</td>
-      <!-- <td>{{ trip.location }}</td>
-      <td>{{ trip.numberPeople }}</td> -->
+      <td>{{ trip.date }}</td>
+      <td>{{ trip.location }}</td>
+      <td>{{ trip.numberPeople }}</td>
+
       <td>
         <button mat-icon-button (click)="onUpdate($event)"><mat-icon>update</mat-icon></button>
       </td>
@@ -34,4 +35,5 @@
     </tr>
     </tbody>
   </table>
+
 </div>
