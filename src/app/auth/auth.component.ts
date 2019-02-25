@@ -28,8 +28,9 @@ export class AuthComponent implements OnInit {
 
  handleLogin() {
     this.apiService.login(this.email, this.password)
-      .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token);
+      .subscribe((data) => {
+        console.log('login', data);
+        sessionStorage.setItem('token', data.token);
         this.router.navigateByUrl('/home');
       })
  }
@@ -37,12 +38,14 @@ export class AuthComponent implements OnInit {
 handleSignup() {
   if(this.password === this.confirm){
     this.apiService.signup(this.email, this.password)
-      .subscribe(({ token, user }) => {
-        sessionStorage.setItem('token', token)
+      .subscribe((data) => {
+        console.log('signup', data)
+        sessionStorage.setItem('token', data.token)
         this.router.navigateByUrl('/home');
       })
   } else {
     alert('passwords do not match')
   }
 }
+
 }

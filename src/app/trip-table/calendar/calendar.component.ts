@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
-// import {FormsModule} from '@angular/forms';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-calendar',
@@ -9,13 +9,13 @@ import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CalendarComponent {
 
-  hoveredDate: NgbDate;
-  fromDate: NgbDate;
-  toDate: NgbDate;
+  public hoveredDate: NgbDate;
+  public fromDate: NgbDate;
+  public toDate: NgbDate;
 
-  constructor(calendar: NgbCalendar) {
+  constructor(calendar: NgbCalendar, private api: ApiService) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.toDate = calendar.getNext(calendar.getToday(), 'd');
   }
 
   onDateSelection(date: NgbDate) {
@@ -26,7 +26,7 @@ export class CalendarComponent {
     } else {
       this.toDate = null;
       this.fromDate = date;
-    }
+    } 
   }
 
   isHovered(date: NgbDate) {
@@ -41,3 +41,4 @@ export class CalendarComponent {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 }
+
