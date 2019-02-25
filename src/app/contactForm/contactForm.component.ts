@@ -12,7 +12,9 @@ export class ContactFormComponent {
   showDelay = new FormControl(700);
   hideDelay = new FormControl(500);
 
+  submitted = false;
+
   onSubmit(){
-    
+    this.submitted = true;
   }
 }

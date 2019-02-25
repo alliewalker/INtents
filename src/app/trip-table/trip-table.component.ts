@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { FormControl } from '@angular/forms';
 import { CalendarComponent } from './calendar/calendar.component'
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-trip-table',
@@ -10,7 +11,7 @@ import { CalendarComponent } from './calendar/calendar.component'
   styleUrls: ['./trip-table.component.css']
 })
 export class TripTableComponent implements OnInit{
-  date: Date;
+  date: string[] = [];
   location: string = '';
   numberPeople: number = 1;
   trips: Array<any> = [];
@@ -26,14 +27,19 @@ export class TripTableComponent implements OnInit{
       this.trips = data
     })
   }
+  
   onSubmit(event){
-    console.log('click')
     console.log(this.date)
     this.api.createTrip(this.date, this.location, this.numberPeople)
     .subscribe(({ created }) => {
       console.log(created)
       this.trips.push(created)
     })
+  }
+
+  onDateChange(whatever){
+    console.log(whatever)
+    this.date = whatever;
   }
 
   
