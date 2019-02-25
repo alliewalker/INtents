@@ -47,4 +47,5 @@ handleSignup() {
     alert('passwords do not match')
   }
 }
+
 }

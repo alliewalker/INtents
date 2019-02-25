@@ -13,28 +13,45 @@
         <mat-icon [style.color]="starRating >= 5 ? '#DCAE1D' : 'black'" (click)="starRating = 5">star_rate</mat-icon>
     </div>
     <button mat-raised-button color="primary"class="button">Submit</button>
+    
 </form>
 
 <div class="container2">
-    <h1>Look at your reviews</h1>
+    <h1>View Your Reviews</h1>
 
     <table>
         <thead>
             <tr>
+                
                 <th>Rating</th>
+                
                 <th>Review</th>
+
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let review of reviews">
-                <td><div class="stars">
+                <td>
+                    
                         <mat-icon [style.color]="review.starRating >= 1 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 2 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 3 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 4 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 5 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
-                    </div></td>
-                <td>{{ review.review }}</td>
+                    
+                </td>
+
+                <td>
+                    <input class="reviewInput" [(ngModel)]="review.review" [readonly]="!review.isUpdating" >
+                </td>
+
+                <td>
+                    <div id="buttons">
+                        <button (click)="review.isUpdating = true" mat-raised-button color="warn"class="button" *ngIf="!review.isUpdating">Update</button>
+                        <button (click)="updateReview(review)" mat-raised-button color="warn" class="button" *ngIf="review.isUpdating">Submit</button>
+                        <button (click)="removeReview(review)" mat-raised-button color="primary"class="button">Delete</button>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
