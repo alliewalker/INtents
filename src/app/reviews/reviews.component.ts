@@ -28,8 +28,6 @@ export class ReviewsComponent implements OnInit {
         this.reviews.push(created)
       })
   }
-<<<<<<< HEAD
-=======
 
   updateReview(review) {
     review.isUpdating = false;
@@ -46,5 +44,4 @@ export class ReviewsComponent implements OnInit {
     })
   }
 
->>>>>>> 297a8b1b78178a5c38f5fd2b8c67f91b8e2efae1
 }
