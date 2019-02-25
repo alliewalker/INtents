@@ -17,7 +17,7 @@ const authorizedRoutes: Routes = [
 ];
 
 const routes: Routes = [
-  {path: 'auth', component: AuthComponent },
+  {path: '', component: AuthComponent },
   {
     path: '', 
     component: LayoutComponent,

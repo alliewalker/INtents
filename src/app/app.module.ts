@@ -7,11 +7,13 @@ import {
   MatIconModule, 
   MatToolbarModule, 
   MatMenuModule, 
+  MatTableModule,
   MatFormFieldModule,
   MatTooltipModule, 
   MatDialogModule, 
   MAT_DIALOG_DATA
 } from '@angular/material';
+import { NgbDatepickerModule, NgbPagination,  } from '@ng-bootstrap/ng-bootstrap'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -25,6 +27,8 @@ import { ContactFormComponent } from './contactForm/contactForm.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './home/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TripTableComponent } from './trip-table/trip-table.component';
+import { CalendarComponent } from './trip-table/calendar/calendar.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './nav/header/header.component';
@@ -39,6 +43,8 @@ import { FooterComponent } from './nav/footer/footer.component';
     AboutComponent,
     ContactFormComponent,
     SearchComponent,
+    TripTableComponent,
+    CalendarComponent,
     ReviewsComponent,
     LayoutComponent,
     HeaderComponent,
@@ -49,10 +55,13 @@ import { FooterComponent } from './nav/footer/footer.component';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    NgbDatepickerModule,
+    /*NgbPagination,*/
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
     MatTooltipModule,
+    MatTableModule,
     MatIconModule,
     MatInputModule,
     MatSelectModule,
@@ -64,9 +73,8 @@ import { FooterComponent } from './nav/footer/footer.component';
     HttpClientModule
 
   ],
-  exports: [ContactFormComponent],
+exports: [/*ContactFormComponent*/],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [ContactFormComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

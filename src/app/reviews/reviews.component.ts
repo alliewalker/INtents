@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
-
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
@@ -27,8 +26,22 @@ export class ReviewsComponent implements OnInit {
       .subscribe(({ created })=> {
         console.log(created)
         this.reviews.push(created)
-
       })
   }
-}
 
+  updateReview(review) {
+    review.isUpdating = false;
+    this.api.updateReview(review)
+    .subscribe(response => console.log(response))
+  }
+
+  removeReview(removed) {
+    this.api.removeReview(removed.id)
+    .subscribe(({ updated }) => {
+      console.log(updated)
+      let withoutDeletedReview = this.reviews.filter(review => review.id !== removed.id);
+      this.reviews = withoutDeletedReview;
+    })
+  }
+
+}
