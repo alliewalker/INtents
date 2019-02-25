@@ -9,7 +9,7 @@ let BASE_URL = 'http://localhost:3000'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    authorization: sessionStorage.getItem("token")
+    // authorization: sessionStorage.getItem("token")
   })
 };
 
