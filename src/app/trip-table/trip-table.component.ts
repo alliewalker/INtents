@@ -42,7 +42,8 @@ export class TripTableComponent implements OnInit{
   //   console.log('update')
   // }
 
-  // onRemove(event){
-  //   console.log('delete')
-  // }
+  onRemove(event){
+    console.log('delete')
+    this.api.removeTrip()
+  }
 }

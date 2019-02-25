@@ -41,3 +41,4 @@ export class CalendarComponent {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 }
+

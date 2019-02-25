@@ -73,6 +73,10 @@ export class ApiService {
   getTrips() {
     return this.http.get<Trip[]>(`${BASE_URL}/trip/read`, httpOptions)
   }
+
+  removeTrip(){
+    return this.http.delete<Trip[]>(`${BASE_URL}/trip/remove/:id`, httpOptions)
+  }
 }
 
 interface HasToken {
@@ -101,7 +105,7 @@ class Review {
 
 class Trip {
   id: string;
-  date: string;
+  date: Date;
   location: string;
   numberPeople: number
   updatedAt: string;
