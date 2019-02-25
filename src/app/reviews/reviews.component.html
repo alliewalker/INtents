@@ -16,24 +16,31 @@
 </form>
 
 <div class="container2">
-    <h1>Look at your reviews</h1>
+    <h1>View Your Reviews</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Rating</th>
                 <th>Review</th>
+                <th>buttons</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let review of reviews">
-                <td><div class="stars">
+                <td><div class="ratingStars">
                         <mat-icon [style.color]="review.starRating >= 1 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 2 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 3 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 4 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
                         <mat-icon [style.color]="review.starRating >= 5 ? '#DCAE1D' : 'black'" >star_rate</mat-icon>
+                        </div></td>
+
+                        <td><div id="buttons">
+                        <button mat-raised-button color="warn"class="button">Update</button>
+                        <button mat-raised-button color="accent"class="button">Delete</button>
                     </div></td>
+
                 <td>{{ review.review }}</td>
             </tr>
         </tbody>

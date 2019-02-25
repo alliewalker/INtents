@@ -12,6 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
   constructor(private http: HttpClient) { }
@@ -37,7 +38,7 @@ export class ApiService {
       }
     }, httpOptions)
     request.subscribe(({ token }) => {
-      httpOptions.headers=new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
   })
   return request;
 }
@@ -52,7 +53,7 @@ export class ApiService {
   }
 
   getReviews() {
-    return this.http.get<Review[]>(`${BASE_URL}/review/read`, httpOptions)
+    return this.http.get<HasReviews>(`${BASE_URL}/review/read`, httpOptions)
   }
 }
 
@@ -70,6 +71,10 @@ interface HasMessage {
 
 interface HasCreated<T> {
   created: T
+}
+
+interface HasReviews {
+  reviews: Review[]
 }
 
 class Review {
