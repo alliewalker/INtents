@@ -43,7 +43,7 @@ export class TripTableComponent implements OnInit{
   //   console.log('update')
   // }
 
-  onRemove(removed) {
+  removeTrip(removed) {
     this.api.removeTrip(removed.id)
     .subscribe(({ updated }) => {
       console.log(updated)
