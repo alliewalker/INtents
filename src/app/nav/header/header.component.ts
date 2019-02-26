@@ -12,6 +12,6 @@ export class HeaderComponent {
 
   logout(){
     sessionStorage.clear()
-    this.router.navigateByUrl('/auth')
+    this.router.navigateByUrl('/')
   }
 }

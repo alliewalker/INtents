@@ -1,7 +1,6 @@
-/* .contactContainer {
-
-} */
-
+h1{
+    font-family: 'Muli', sans-serif;
+}
 
 .contactForm {
     display: flex;

@@ -1,9 +1,20 @@
 .logo {
-    height: 6em;
-    width: 7em;
-    left: 1.5em;
+    height: 8em;
+    width: 9em;
+    left: -2px;
     position: fixed;
+    top: -2px;
+    
+    
 }
+
+/* #logoBox{
+    height: 7em;
+    width: 9em;
+    left: 0em;
+    position: fixed;
+    background-color: rgba(245, 245, 245, .4);
+} */
 
 .toolBar {
     top: 0;
@@ -11,7 +22,6 @@
     right: 0;
     z-index: 998;
     width: 100vw;
-    /* box-shadow: .1em .1em .1em #000000; */
     height: 7em;
     display: flex;
     justify-content: center;
