@@ -39,7 +39,7 @@ export class TripTableComponent implements OnInit{
     })
   }
 
-  onDateChange(whatever){
+  onDateChange(whatever: any){
     console.log(whatever)
     this.date = whatever;
   }
