@@ -76,8 +76,8 @@ export class ApiService {
     return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
-  removeTrip(trip){
-    return this.http.delete<HasUpdated<Trip>>(`${BASE_URL}/trip/remove/${trip.id}`, httpOptions)
+  removeTrip(tripId){
+    return this.http.delete<HasUpdated<Trip>>(`${BASE_URL}/trip/remove/${tripId}`, httpOptions)
   }
 
   removeReview(reviewId) {

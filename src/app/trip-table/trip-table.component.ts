@@ -11,11 +11,7 @@ import { FormControl } from '@angular/forms';
 export class TripTableComponent implements OnInit{
   date: string[] = [];
   location: string = '';
-<<<<<<< HEAD
-  numberPeople: number = 0;
-=======
   numberPeople: number = null;
->>>>>>> 968b1e5edf4604b7aa6ad8a29920d4ac32aad08c
   trips: Array<any> = [];
 
   constructor(private router: Router, private api: ApiService) { }
@@ -48,7 +44,7 @@ export class TripTableComponent implements OnInit{
   //   console.log('update')
   // }
 
-  onRemove(removed) {
+  removeTrip(removed) {
     this.api.removeTrip(removed.id)
     .subscribe(({ updated }) => {
       console.log(updated)

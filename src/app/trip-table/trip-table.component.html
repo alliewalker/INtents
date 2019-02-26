@@ -1,10 +1,5 @@
 <div class="tripPlan">
-<<<<<<< HEAD
-  <h2 style="text-align: center">Book Your Adventure</h2>
-<app-calendar></app-calendar>
-=======
 <app-calendar (onDateChange)="onDateChange($event)"></app-calendar>
->>>>>>> 968b1e5edf4604b7aa6ad8a29920d4ac32aad08c
 <form>
   <div class="form-group" style="text-align: center">
     <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
@@ -36,7 +31,7 @@
         <button mat-icon-button (click)="onUpdate($event)"><mat-icon>update</mat-icon></button>
       </td>
       <td>
-        <button mat-icon-button (click)="onRemove($event)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button (click)="removeTrip(trip)"><mat-icon>delete_outline</mat-icon></button>
       </td>
     </tr>
     </tbody>
