@@ -9,7 +9,6 @@ import { BASE_URL } from '../../environments/environment.prod'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-  // authorization: sessionStorage.getItem("token")
 })
 };
 
@@ -74,8 +73,8 @@ export class ApiService {
     return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
-  removeTrip(){
-    return this.http.delete(`${BASE_URL}/trip/remove/:id`, httpOptions)
+  removeTrip(trip){
+    return this.http.delete<HasUpdated<Trip>>(`${BASE_URL}/trip/remove/${trip.id}`, httpOptions)
   }
 
   removeReview(reviewId) {

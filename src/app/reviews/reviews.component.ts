@@ -43,5 +43,4 @@ export class ReviewsComponent implements OnInit {
       this.reviews = withoutDeletedReview;
     })
   }
-
 }

@@ -2,8 +2,6 @@ import {  Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { FormControl } from '@angular/forms';
-import { CalendarComponent } from './calendar/calendar.component'
-import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-trip-table',
@@ -29,7 +27,6 @@ export class TripTableComponent implements OnInit{
   }
   
   onSubmit(event){
-    console.log(this.date)
     this.api.createTrip(this.date, this.location, this.numberPeople)
     .subscribe(({ created }) => {
       console.log(this.trips)
@@ -39,18 +36,19 @@ export class TripTableComponent implements OnInit{
   }
 
   onDateChange(whatever: any){
-    console.log(whatever)
     this.date = whatever;
   }
-
-  
 
   // onUpdate(event){
   //   console.log('update')
   // }
 
-  onRemove(event){
-    console.log('delete')
-    this.api.removeTrip()
+  onRemove(removed) {
+    this.api.removeTrip(removed.id)
+    .subscribe(({ updated }) => {
+      console.log(updated)
+      let withoutDeletedTrip = this.trips.filter(trip => trip.id !== trip.id);
+      this.trips = withoutDeletedTrip;
+    })
   }
 }
