@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { BASE_URL } from '../../environments/environment.prod'
+import { BASE_URL } from '../../environments/environment.prod'
 
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
-let BASE_URL = 'http://localhost:3000'
+// let BASE_URL = 'http://localhost:3000'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -12,7 +12,6 @@ const httpOptions = {
     authorization: sessionStorage.getItem("token")
   })
 };
-
 
 @Injectable({
   providedIn: 'root'
@@ -72,11 +71,11 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get(`${BASE_URL}/trip/read/`, httpOptions)
+    return this.http.get<Trip>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
   removeTrip(){
-    return this.http.delete<Trip[]>(`${BASE_URL}/trip/remove/:id`, httpOptions)
+    return this.http.delete(`${BASE_URL}/trip/remove/:id`, httpOptions)
   }
 
   removeReview(reviewId) {
@@ -90,8 +89,6 @@ export class ApiService {
     }, httpOptions)
   }  
 }
-
-
 
 interface HasToken {
   token: string

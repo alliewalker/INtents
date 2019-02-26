@@ -1,4 +1,4 @@
-import {  Component, OnInit, Inject } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { FormControl } from '@angular/forms';
@@ -13,7 +13,7 @@ import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 export class TripTableComponent implements OnInit{
   date: string[] = [];
   location: string = '';
-  numberPeople: number = 1;
+  numberPeople: number = null;
   trips: Array<any> = [];
 
   constructor(private router: Router, private api: ApiService) { }
@@ -24,7 +24,7 @@ export class TripTableComponent implements OnInit{
   ngOnInit() {
     this.api.getTrips()
     .subscribe((data) => {
-      this.trips = data.trip
+      this.trips = data.trip;
     })
   }
   
@@ -32,10 +32,9 @@ export class TripTableComponent implements OnInit{
     console.log(this.date)
     this.api.createTrip(this.date, this.location, this.numberPeople)
     .subscribe(({ created }) => {
-      // console.log(this.trips)
+      console.log(this.trips)
       console.log(created)
       this.trips.push(created)
-      console.log(this.trips)
     })
   }
 

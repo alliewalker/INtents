@@ -16,7 +16,7 @@ export class CalendarComponent {
 
   constructor(public calendar: NgbCalendar, private api: ApiService) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd');
+    this.toDate = calendar.getNext(calendar.getToday(), null);
   }
 
   onDateSelection(date: NgbDate) {
@@ -46,8 +46,7 @@ export class CalendarComponent {
   }
 
   formatDate(date:NgbDate): string {
-    return new Date(date.year, date.month, date.day).toISOString()
+    return new Date(date.year, date.month - 1, date.day).toISOString()
       .substr(0, 10)
   }
 }
-
