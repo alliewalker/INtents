@@ -3,9 +3,8 @@
   padding: 4.5% 2% 0 2%;
   border-style: none;
   font-family: 'Muli', sans-serif;
-  padding: 10px;
-
-
+  padding-left: 30px;
+  top: -40px;
 }
 
 .custom-day {
@@ -14,7 +13,6 @@
   display: inline-block;
   height: 1.5rem;
   width: 1.5rem;
-  
 }
 
 .custom-day.focused {
@@ -29,4 +27,8 @@
   
 .custom-day.faded {
   background-color: rgba(2, 117, 216, 0.5);
+}
+
+h2 {
+  width: 50%;
 }

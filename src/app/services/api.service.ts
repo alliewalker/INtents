@@ -9,8 +9,9 @@ let BASE_URL = 'http://localhost:3000'
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
+    'Content-Type': 'application/json',
+  // authorization: sessionStorage.getItem("token")
+})
 };
 
 
@@ -62,7 +63,7 @@ export class ApiService {
     return this.http.get<HasReviews>(`${BASE_URL}/review/read`, httpOptions)
   }
 
-  createTrip(date: Date, location: string, numberPeople: number) {
+  createTrip(date: string[], location: string, numberPeople: number) {
     return this.http.post<HasCreated<Trip>>(`${BASE_URL}/trip/make`, {
       trip: {
         date: date,
@@ -73,7 +74,7 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get<Trip[]>(`${BASE_URL}/trip/read`, httpOptions)
+    return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
   removeTrip(){
