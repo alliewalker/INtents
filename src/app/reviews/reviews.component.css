@@ -18,6 +18,8 @@
     border-radius: 10px;
     margin: 50px;  
     width: 40vw;
+    font-family: 'Muli', sans-serif;
+
 }
 
 #reviewInput {
@@ -50,12 +52,6 @@ h1 {
 position: relative;
 }
 
-th {
-    /* display: inline;
-    font-family: 'Muli', sans-serif;
-    padding: 30px;
-    position: relative; */
-}
 
 
 #buttons{
