@@ -27,7 +27,7 @@
                 <th>Rating</th>
                 
                 <th>Review</th>
-
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -48,9 +48,12 @@
 
                 <td>
                     <div id="buttons">
-                        <button (click)="review.isUpdating = true" mat-raised-button color="warn"class="button" *ngIf="!review.isUpdating">Update</button>
-                        <button (click)="updateReview(review)" mat-raised-button color="warn" class="button" *ngIf="review.isUpdating">Submit</button>
-                        <button (click)="removeReview(review)" mat-raised-button color="primary"class="button">Delete</button>
+                        <!-- <button (click)="review.isUpdating = true" mat-raised-button color="warn"class="button" *ngIf="!review.isUpdating">Update</button> -->
+                        <button mat-icon-button (click)="review.isUpdating = true" *ngIf="!review.isUpdating"><mat-icon>update</mat-icon></button>
+                        <button mat-icon-button (click)="updateReview(review)" *ngIf="review.isUpdating"><mat-icon>update</mat-icon></button>
+
+                        <!-- <button (click)="updateReview(review)" mat-raised-button color="warn" class="button" *ngIf="review.isUpdating">Submit</button> -->
+                        <button mat-icon-button (click)="removeReview(review)"><mat-icon>delete_outline</mat-icon></button>
                     </div>
                 </td>
             </tr>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 // import { BASE_URL } from '../../environments/environment.prod'
 
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
@@ -8,8 +9,7 @@ let BASE_URL = 'http://localhost:3000'
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    authorization: sessionStorage.getItem("token")
+    'Content-Type': 'application/json'
   })
 };
 
@@ -23,29 +23,30 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   login(email, password) {
-    let request =  this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
       user:{
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers=new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-    })
-    return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    )
   }
 
   signup(email, password) {
-    let request = this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
+    console.log('signing up')
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
       user: {
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-  })
-  return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    );
 }
 
   createReview(rating: number, message: string) {

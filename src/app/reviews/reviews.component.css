@@ -51,10 +51,10 @@ position: relative;
 }
 
 th {
-    display: inline;
+    /* display: inline;
     font-family: 'Muli', sans-serif;
     padding: 30px;
-    position: relative;
+    position: relative; */
 }
 
 
@@ -68,4 +68,12 @@ th {
 #reviewTable {
     width: 100%;
     position: relative;
+}
+
+table {
+    width: 100%;
+}
+
+td, th, td input {
+    text-align: center;
 }
