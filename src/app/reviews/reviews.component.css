@@ -18,6 +18,8 @@
     border-radius: 10px;
     margin: 50px;  
     width: 40vw;
+    font-family: 'Muli', sans-serif;
+
 }
 
 #reviewInput {
@@ -34,6 +36,7 @@
     padding: 20px;
 }
 
+/* for the view */
 .reviewInput{
     border: none;
     background-color:#CAE4dB;
@@ -46,23 +49,26 @@ h1 {
 }
 
 .ratingStars {
-    justify-content: left;
-    flex-direction: row;
-    margin: 20px;
+position: relative;
 }
 
-table{
-    width: 100%;
-}
-
-th {
-    display: inline;
-    margin: 75px;
-    font-family: 'Muli', sans-serif;
-}
 
 #buttons{
     display: flex;
     flex-direction: row;
     width: 100%;
+    position: relative;
+}
+
+#reviewTable {
+    width: 100%;
+    position: relative;
+}
+
+table {
+    width: 100%;
+}
+
+td, th, td input {
+    text-align: center;
 }

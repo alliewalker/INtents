@@ -36,6 +36,7 @@ export class AuthComponent implements OnInit {
  }
 
 handleSignup() {
+  console.log('something')
   if(this.password === this.confirm){
     this.apiService.signup(this.email, this.password)
       .subscribe((data) => {

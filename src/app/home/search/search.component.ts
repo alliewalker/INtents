@@ -31,16 +31,15 @@ export class SearchComponent {
         .subscribe(({ data }) => {
           this.items = data;
         })
-    // } else if(this.dropdown === 'events') {
-    //   this.http.get<HasData>(`${this.apiURL}/events/?q=${this.search}`)
-    //     .subscribe(({ data }) => {
-    //       this.items = data;
-    //     })
+    } else if(this.dropdown === 'events') {
+      this.http.get<HasData>(`${this.apiURL}/events/?q=${this.search}`)
+        .subscribe(({ data }) => {
+          this.items = data;
+        })
     }
   }
 
 }
-
 interface HasData {
   data: Array<any>
 }

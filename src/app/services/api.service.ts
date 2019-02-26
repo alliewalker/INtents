@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../environments/environment.prod'
+import { tap } from 'rxjs/operators';
 
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
@@ -21,29 +22,30 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   login(email, password) {
-    let request =  this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
       user:{
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers=new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-    })
-    return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    )
   }
 
   signup(email, password) {
-    let request = this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
+    console.log('signing up')
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
       user: {
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-  })
-  return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    );
 }
 
   createReview(rating: number, message: string) {
