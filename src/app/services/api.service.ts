@@ -14,6 +14,7 @@ const httpOptions = {
 };
 
 @Injectable({
+  providedIn: 'root'
 })
 
 export class ApiService {
@@ -87,7 +88,7 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get<Trip>(`${BASE_URL}/trip/read/`, httpOptions)
+    return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
   removeTrip(){

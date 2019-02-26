@@ -16,5 +16,6 @@ export class ContactFormComponent {
 
   onSubmit(){
     this.submitted = true;
+    console.log('submitted')
   }
 }

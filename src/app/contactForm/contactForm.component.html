@@ -1,5 +1,5 @@
 <div class="contactContainer">
-    <form class="contactForm" (submit)="onSubmit()" action="https://formspree.io/justis710@gmail.com" method="POST" target='blank'>
+    <form class="contactForm" ngNoForm  action="https://formspree.io/jess.diego26@gmail.com" method="POST" target='blank'>
         <h1>Contact Us!</h1>
             <mat-form-field>
                 <input matInput type="email" name="email" placeholder="Your Email" required>
@@ -9,9 +9,11 @@
                 <textarea matInput name="message" type="textarea" placeholder="Message" required></textarea>
             </mat-form-field>
 
-        <div class="buttons">
+            <div class="buttons">
             <button mat-button name="submit" type="submit" value="send"><mat-icon>email</mat-icon></button>
             <button mat-button name="close" type="button"><mat-icon routerLink='/home'>exit_to_app</mat-icon></button>
         </div>
     </form>
 </div>
+
+<!-- (submit)="onSubmit()" -->
