@@ -12,28 +12,6 @@ export class ReviewsComponent implements OnInit {
   starRating: number = 1;
   reviews: Array<any> = [];
 
-<<<<<<< HEAD
-  private adminStatus;
-
-  constructor(private router: Router) {
-    console.log('anything')
-   }
-
-  ngOnInit() {
-    this.adminStatus = sessionStorage.getItem("adminStatus");
-    console.log(this.adminStatus);
-  }
-
-  openDiv(){
-    document.getElementById("adminDeleteDiv").style.display = "block"
-  }
-
-  sendDeleteFetch(id){
-    event.preventDefault();
-    console.log(id);
-  }
-}
-=======
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
@@ -67,4 +45,3 @@ export class ReviewsComponent implements OnInit {
   }
 
 }
->>>>>>> develop

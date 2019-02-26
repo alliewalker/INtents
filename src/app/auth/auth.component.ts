@@ -28,16 +28,9 @@ export class AuthComponent implements OnInit {
 
  handleLogin() {
     this.apiService.login(this.email, this.password)
-<<<<<<< HEAD
-      .subscribe(({ token, user }) => {
-        // console.log(token, user);
-        // sessionStorage.setItem('adminStatus', user.adminStatus);
-        sessionStorage.setItem('token', token);
-=======
       .subscribe((data) => {
         console.log('login', data);
         sessionStorage.setItem('token', data.token);
->>>>>>> develop
         this.router.navigateByUrl('/home');
       })
  }
@@ -45,15 +38,9 @@ export class AuthComponent implements OnInit {
 handleSignup() {
   if(this.password === this.confirm){
     this.apiService.signup(this.email, this.password)
-<<<<<<< HEAD
-      .subscribe(({token, user}) => {
-        // console.log(user)
-        sessionStorage.setItem('token', token)
-=======
       .subscribe((data) => {
         console.log('signup', data)
         sessionStorage.setItem('token', data.token)
->>>>>>> develop
         this.router.navigateByUrl('/home');
       })
   } else {
