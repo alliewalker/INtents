@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDate, NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -14,9 +14,9 @@ export class CalendarComponent {
   public fromDate: NgbDate;
   public toDate: NgbDate;
 
-  constructor(public calendar: NgbCalendar, private api: ApiService) {
+  constructor(calendar: NgbCalendar, private api: ApiService) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd');
+    this.toDate = calendar.getNext(calendar.getToday(), null);
   }
 
   onDateSelection(date: NgbDate) {
@@ -46,8 +46,7 @@ export class CalendarComponent {
   }
 
   formatDate(date:NgbDate): string {
-    return new Date(date.year, date.month, date.day).toISOString()
+    return new Date(date.year, date.month -1, date.day).toISOString()
       .substr(0, 10)
   }
 }
-
