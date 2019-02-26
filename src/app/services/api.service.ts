@@ -9,8 +9,8 @@ import { BASE_URL } from '../../environments/environment.prod'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    authorization: sessionStorage.getItem("token")
-  })
+  // authorization: sessionStorage.getItem("token")
+})
 };
 
 @Injectable({
@@ -71,7 +71,7 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get<Trip>(`${BASE_URL}/trip/read/`, httpOptions)
+    return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
   removeTrip(){
