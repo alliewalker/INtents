@@ -1,3 +1,7 @@
+ngb-datepicker {
+  border: none;
+}
+
 .calendar {
   position: relative;
   padding: 4.5% 2% 0 2%;

@@ -61,6 +61,17 @@ export class ApiService {
     return this.http.get<HasReviews>(`${BASE_URL}/review/read`, httpOptions)
   }
 
+  removeReview(reviewId) {
+    console.log('api removing review', reviewId)
+    return this.http.delete<HasUpdated<Review>>(`${BASE_URL}/review/remove/${reviewId}`, httpOptions)
+    }
+ 
+  updateReview(review) {
+    return this.http.put<HasUpdated<Review>>(`${BASE_URL}/review/update/${review.id}`, {
+      review
+    }, httpOptions)
+  }  
+
   createTrip(date: string[], location: string, numberPeople: number) {
     return this.http.post<HasCreated<Trip>>(`${BASE_URL}/trip/make`, {
       trip: {
@@ -79,16 +90,12 @@ export class ApiService {
     return this.http.delete<HasUpdated<Trip>>(`${BASE_URL}/trip/remove/${tripId}`, httpOptions)
   }
 
-  removeReview(reviewId) {
-    console.log('api removing review', reviewId)
-    return this.http.delete<HasUpdated<Review>>(`${BASE_URL}/review/remove/${reviewId}`, httpOptions)
-    }
- 
-  updateReview(review) {
-    return this.http.put<HasUpdated<Review>>(`${BASE_URL}/review/update/${review.id}`, {
-      review
+  updateTrip(trip) {
+    return this.http.put<HasUpdated<Trip>>(`${BASE_URL}/trip/promote/${trip.id}`, 
+    {
+      trip
     }, httpOptions)
-  }  
+  }
 }
 
 interface HasToken {
@@ -116,7 +123,7 @@ class Review {
 }
 
 class Trip {
-  id: string;
+  id: number;
   date: Date;
   location: string;
   numberPeople: number
