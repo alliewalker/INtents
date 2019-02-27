@@ -4,7 +4,6 @@ export const environment = {
 
 export let BASE_URL = '';
 
-
 switch (window.location.hostname){
   case 'https://ajj-intents.herokuapp.com':
     BASE_URL = 'https://jd-intentserver.herokuapp.com'
