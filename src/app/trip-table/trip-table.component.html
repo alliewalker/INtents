@@ -7,7 +7,6 @@
     <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
     <input mat-input class="form-control ml-2" type="text" name="numberOfPeople" [(ngModel)]="numberPeople" placeholder="# of People"/>
     <button class ="submit" mat-raised-button color="primary" type="submit" (click)="onSubmit($event)"matTooltip="Create Trip" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Create Trip button">Submit</button>
-
   </div>
 </form>
 
@@ -28,10 +27,18 @@
       <td>{{ trip.date }}</td>
       <td>{{ trip.location }}</td>
       <td>{{ trip.numberPeople }}</td>
-
+      <!-- <td>
+        <input class="tripUpdateInput" [(ngModel)]="trip.trip" [readonly]="!trip.isUpdating" [hidden]="!trip.isUpdating"]>
+      </td> -->
       <!-- <td>
         <button mat-icon-button (click)="updateTrip(trip)"><mat-icon>update</mat-icon></button>
       </td> -->
+      <td>
+        <button mat-icon-button (click)="trip.isUpdating = true" *ngIf="!trip.isUpdating"><mat-icon>update</mat-icon></button>
+      </td>
+      <td>
+        <button mat-icon-button (click)="updateTrip(trip)" *ngIf="trip.isUpdating"><mat-icon>update</mat-icon></button>
+      </td>
       <td>
         <button mat-icon-button (click)="removeTrip(trip)"><mat-icon>delete_outline</mat-icon></button>
       </td>
