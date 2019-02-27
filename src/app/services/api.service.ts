@@ -6,12 +6,21 @@ import { tap } from 'rxjs/operators';
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
 let BASE_URL = 'http://localhost:3000'
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-})
-};
+let httpOptions;
+if(sessionStorage.getItem('token')) {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    })
+  }
+} else {
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
+}
 
 
 @Injectable({
@@ -30,7 +39,7 @@ export class ApiService {
       }
     }, httpOptions).pipe(
       tap(({ token }) => {
-        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', token);
       })
     )
   }
@@ -44,7 +53,7 @@ export class ApiService {
       }
     }, httpOptions).pipe(
       tap(({ token }) => {
-        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', token);
       })
     );
 }
