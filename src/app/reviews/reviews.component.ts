@@ -24,8 +24,9 @@ export class ReviewsComponent implements OnInit {
   onSubmit(event) {
     this.api.createReview(this.starRating, this.message)
       .subscribe(({ created })=> {
-        console.log(created)
         this.reviews.push(created)
+        this.message = ''
+        this.starRating = 1
       })
   }
 
@@ -43,5 +44,4 @@ export class ReviewsComponent implements OnInit {
       this.reviews = withoutDeletedReview;
     })
   }
-
 }

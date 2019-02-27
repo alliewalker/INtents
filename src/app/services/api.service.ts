@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../environments/environment.prod'
+import { tap } from 'rxjs/operators';
 
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
 // let BASE_URL = 'http://localhost:3000'
 
-const httpOptions = {
+let httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    // authorization: sessionStorage.getItem("token")
   })
 };
+if(sessionStorage.getItem('token')) {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    })
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -22,29 +30,30 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   login(email, password) {
-    let request =  this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/login`, {
       user:{
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers=new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-    })
-    return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    )
   }
 
   signup(email, password) {
-    let request = this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
+    console.log('signing up')
+    return this.http.post<HasToken & HasUser>(`${BASE_URL}/user/create`, {
       user: {
         email: email,
         password: password
       }
-    }, httpOptions)
-    request.subscribe(({ token }) => {
-      httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
-  })
-  return request;
+    }, httpOptions).pipe(
+      tap(({ token }) => {
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('authorization', token);
+      })
+    );
 }
 
   createReview(rating: number, message: string) {
@@ -60,6 +69,17 @@ export class ApiService {
     return this.http.get<HasReviews>(`${BASE_URL}/review/read`, httpOptions)
   }
 
+  removeReview(reviewId) {
+    console.log('api removing review', reviewId)
+    return this.http.delete<HasUpdated<Review>>(`${BASE_URL}/review/remove/${reviewId}`, httpOptions)
+    }
+ 
+  updateReview(review) {
+    return this.http.put<HasUpdated<Review>>(`${BASE_URL}/review/update/${review.id}`, {
+      review
+    }, httpOptions)
+  }  
+
   createTrip(date: string[], location: string, numberPeople: number) {
     return this.http.post<HasCreated<Trip>>(`${BASE_URL}/trip/make`, {
       trip: {
@@ -71,23 +91,19 @@ export class ApiService {
   }
 
   getTrips() {
-    return this.http.get<Trip>(`${BASE_URL}/trip/read/`, httpOptions)
+    return this.http.get<any>(`${BASE_URL}/trip/read/`, httpOptions)
   }
 
-  removeTrip(){
-    return this.http.delete(`${BASE_URL}/trip/remove/:id`, httpOptions)
+  removeTrip(tripId){
+    return this.http.delete<HasUpdated<Trip>>(`${BASE_URL}/trip/remove/${tripId}`, httpOptions)
   }
 
-  removeReview(reviewId) {
-    console.log('api removing review', reviewId)
-    return this.http.delete<HasUpdated<Review>>(`${BASE_URL}/review/remove/${reviewId}`, httpOptions)
-    }
- 
-  updateReview(review) {
-    return this.http.put<HasUpdated<Review>>(`${BASE_URL}/review/update/${review.id}`, {
-      review
+  updateTrip(trip) {
+    return this.http.put<HasUpdated<Trip>>(`${BASE_URL}/trip/promote/${trip.id}`, 
+    {
+      trip
     }, httpOptions)
-  }  
+  }
 }
 
 interface HasToken {
@@ -115,7 +131,7 @@ class Review {
 }
 
 class Trip {
-  id: string;
+  id: number;
   date: Date;
   location: string;
   numberPeople: number
