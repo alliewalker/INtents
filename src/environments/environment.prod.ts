@@ -1,12 +1,15 @@
+export let BASE_URL = '';
+
+
 export const environment = {
-  production: true
+  production: true,
+  BASE_URL: 'https://jd-intentserver.herokuapp.com'
 };
 
-export let BASE_URL = '';
 
 switch (window.location.hostname){
   case 'https://ajj-intents.herokuapp.com':
-    BASE_URL = 'https://jd-intentserver.herokuapp.com'
+    BASE_URL = 'https://jd-intentserver.herokuapp.com';
     break;
   default:
     BASE_URL = 'http://localhost:3000';
