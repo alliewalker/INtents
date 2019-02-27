@@ -14,13 +14,13 @@
   <table class="table table-striped">
     <thead>
     <tr class="tableHead">
-      <th scope="col">#</th>
+      <th scope="col">Trip Id</th>
       <th scope="col">Date</th>
       <th scope="col">Location</th>
       <th scope="col"># of People</th>
-      <!-- <th scope="col">Update</th>
-      <th scope="col">Delete</th> -->
+        
     </tr>
+    
     </thead>
     <tbody>
     <tr *ngFor="let trip of trips">  
@@ -29,11 +29,9 @@
       <td>{{ trip.location }}</td>
       <td>{{ trip.numberPeople }}</td>
 
-      <td>
-        <button mat-icon-button (click)="onUpdate($event)"><mat-icon>update</mat-icon></button>
-      </td>
-      <td>
-        <button mat-icon-button (click)="removeTrip(trip)"><mat-icon>delete_outline</mat-icon></button>
+      <td id="buttons">
+        <button mat-icon-button (click)="onUpdate($event)" matTooltip="update"><mat-icon>update</mat-icon></button>
+        <button mat-icon-button (click)="removeTrip(trip)" matTooltip="delete"><mat-icon>delete_outline</mat-icon></button>
       </td>
     </tr>
     </tbody>

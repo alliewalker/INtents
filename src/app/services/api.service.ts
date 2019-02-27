@@ -6,7 +6,11 @@ import { tap } from 'rxjs/operators';
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
 let BASE_URL = 'http://localhost:3000'
-let httpOptions;
+let httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  })
+};
 if(sessionStorage.getItem('token')) {
   httpOptions = {
     headers: new HttpHeaders({
@@ -14,13 +18,22 @@ if(sessionStorage.getItem('token')) {
       'Authorization': sessionStorage.getItem('token')
     })
   }
-} else {
-   httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  };
 }
+// let httpOptions;
+// if(sessionStorage.getItem('token')) {
+//   httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type': 'application/json',
+//       'Authorization': sessionStorage.getItem('token')
+//     })
+//   }
+// } else {
+//    httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type': 'application/json',
+//     })
+//   };
+// }
 
 
 @Injectable({
@@ -39,7 +52,8 @@ export class ApiService {
       }
     }, httpOptions).pipe(
       tap(({ token }) => {
-        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', token);
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json')
+        .set('Authorization', token);
       })
     )
   }
@@ -104,11 +118,12 @@ export class ApiService {
 
 
 interface HasToken {
-  token: string
+  token: string;
 }
 
 interface HasUser {
   user: object
+  token: string;
 }
 
 interface HasCreated<T> {
@@ -125,6 +140,7 @@ class Review {
   review: string;
   updatedAt: string;
   createdAt: string;
+
 }
 
 class Trip {
