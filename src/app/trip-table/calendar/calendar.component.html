@@ -1,6 +1,6 @@
 <div class='calendar'>
   <br />
-  <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden" timestamp="null" [(ngModel)]="date">
+  <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden" timestamp="null">
   </ngb-datepicker>
 
   <ng-template #t let-date let-focused="focused">
