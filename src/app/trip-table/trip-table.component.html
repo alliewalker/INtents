@@ -1,40 +1,40 @@
 <div class="tripPlan">
+  <h2 style="text-align: center">Book Your Next Adventure</h2>
 <app-calendar (onDateChange)="onDateChange($event)"></app-calendar>
-<form>
-  <div class="form-group" style="text-align: center">
-    <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
-    <input mat-input class="form-control ml-2" type="text" name="numberOfPeople" [(ngModel)]="numberPeople" placeholder="# of People"/>
-    <button class ="submit" mat-raised-button color="primary" type="submit" (click)="onSubmit($event)"matTooltip="Create Trip" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Create Trip button">Submit</button>
 
-  </div>
+<form>
+<div class="form-group" style="text-align: center">
+  <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
+  <input mat-input class="form-control ml-2" type="text" name="numberOfPeople" [(ngModel)]="numberPeople" placeholder="# of People"/>
+  <button class ="submit" mat-raised-button color="primary" type="submit" (click)="onSubmit($event)"matTooltip="Create Trip" [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay.value" aria-label="Create Trip button">Submit</button>
+
+</div>
 </form>
 
-  <table class="table table-striped">
-    <thead>
-    <tr class="tableHead">
-      <th scope="col">#</th>
-      <th scope="col">Date</th>
-      <th scope="col">Location</th>
-      <th scope="col"># of People</th>
-      <!-- <th scope="col">Update</th>
-      <th scope="col">Delete</th> -->
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let trip of trips">  
-      <th scope="row">{{ trip.id }}</th>
-      <td>{{ trip.date }}</td>
-      <td>{{ trip.location }}</td>
-      <td>{{ trip.numberPeople }}</td>
+<table class="table table-striped">
+  <thead>
+  <tr class="tableHead">
+    <th scope="col">Trip Id</th>
+    <th scope="col">Date</th>
+    <th scope="col">Location</th>
+    <th scope="col"># of People</th>
+      
+  </tr>
+  
+  </thead>
+  <tbody>
+  <tr *ngFor="let trip of trips">  
+    <th scope="row">{{ trip.id }}</th>
+    <td>{{ trip.date }}</td>
+    <td>{{ trip.location }}</td>
+    <td>{{ trip.numberPeople }}</td>
 
-      <!-- <td>
-        <button mat-icon-button (click)="updateTrip(trip)"><mat-icon>update</mat-icon></button>
-      </td> -->
-      <td>
-        <button mat-icon-button (click)="removeTrip(trip)"><mat-icon>delete_outline</mat-icon></button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <td id="buttons">
+      <button mat-icon-button (click)="onUpdate($event)" matTooltip="update"><mat-icon>update</mat-icon></button>
+      <button mat-icon-button (click)="removeTrip(trip)" matTooltip="delete"><mat-icon>delete_outline</mat-icon></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
 </div>

@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { BASE_URL } from '../../environments/environment.prod'
 
-
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
 // let BASE_URL = 'http://localhost:3000'
