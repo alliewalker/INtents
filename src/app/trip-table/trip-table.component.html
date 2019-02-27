@@ -28,10 +28,10 @@
     <td>{{ trip.date }}</td>
     <td>{{ trip.location }}</td>
     <td>{{ trip.numberPeople }}</td>
-     <td>
+     <!-- <td>
         <input class="tripUpdateInput" [(ngModel)]="trip.trip" [readonly]="!trip.isUpdating" [hidden]="trip.isUpdating">
         <button mat-icon-button (click)="updateTrip(trip)"><mat-icon>update</mat-icon></button>
-      </td>
+      </td> -->
 
     <td id="buttons">
       <button mat-icon-button (click)="onUpdate($event)" matTooltip="update"><mat-icon>update</mat-icon></button>

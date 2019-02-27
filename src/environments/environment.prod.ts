@@ -11,5 +11,5 @@ switch (window.location.hostname){
     BASE_URL = 'https://jd-intentserver.herokuapp.com';
     break;
   default:
-  BASE_URL = 'https://jd-intentserver.herokuapp.com'
+    BASE_URL = 'http://localhost:3000';
 }

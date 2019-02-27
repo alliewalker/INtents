@@ -1,16 +1,12 @@
-ngb-datepicker {
-  border: none;
-}
-
 .calendar {
   position: relative;
   padding: 4.5% 2% 0 2%;
   border-style: none;
   font-family: 'Muli', sans-serif;
-  padding-left: 30px;
-  top: -40px;
+  padding-left: 110px;
+  top: -50px;
+  left: 30%;
 }
-
 .custom-day {
   text-align: center;
   padding: 0.185rem 0.25rem;
@@ -18,11 +14,9 @@ ngb-datepicker {
   height: 1.5rem;
   width: 1.5rem;
 }
-
 .custom-day.focused {
   background-color: #e6e6e6;
 }
-
 .custom-day.range, .custom-day:hover {
   background-color: rgb(2, 117, 216);
   color: white;
@@ -31,8 +25,4 @@ ngb-datepicker {
   
 .custom-day.faded {
   background-color: rgba(2, 117, 216, 0.5);
-}
-
-h2 {
-  width: 50%;
 }
