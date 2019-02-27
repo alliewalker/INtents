@@ -20,6 +20,21 @@ if(sessionStorage.getItem('token')) {
     })
   }
 }
+// let httpOptions;
+// if(sessionStorage.getItem('token')) {
+//   httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type': 'application/json',
+//       'Authorization': sessionStorage.getItem('token')
+//     })
+//   }
+// } else {
+//    httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type': 'application/json',
+//     })
+//   };
+// }
 
 // const httpOptions = {
 //   headers: new HttpHeaders({
@@ -45,7 +60,8 @@ export class ApiService {
       }
     }, httpOptions).pipe(
       tap(({ token }) => {
-        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', token);
+        httpOptions.headers = new HttpHeaders().set('Content-Type', 'application/json')
+        .set('Authorization', token);
       })
     )
   }
@@ -115,11 +131,12 @@ export class ApiService {
 }
 
 interface HasToken {
-  token: string
+  token: string;
 }
 
 interface HasUser {
   user: object
+  token: string;
 }
 
 interface HasCreated<T> {
@@ -136,6 +153,7 @@ class Review {
   review: string;
   updatedAt: string;
   createdAt: string;
+
 }
 
 class Trip {

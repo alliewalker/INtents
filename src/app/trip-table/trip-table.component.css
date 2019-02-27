@@ -1,11 +1,8 @@
 .tripPlan {
-    /* position: relative;
-    left: 55%;
-    height: 65%;
-    width: 38%; */
     background-color: #CAE4dB;
     font-family: 'Muli', sans-serif;
     border-radius: 10px;
+    margin: 10px;
 }
 
 th, td {
@@ -33,3 +30,9 @@ form {
 h2 {
     padding: 30px;
 }
+
+#button {
+    display: flex;
+    flex-direction: row;
+}
+

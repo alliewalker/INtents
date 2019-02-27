@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './trip-table.component.html',
   styleUrls: ['./trip-table.component.css']
 })
+
 export class TripTableComponent implements OnInit{
   date: string[] = [];
   location: string = '';
