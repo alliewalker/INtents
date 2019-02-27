@@ -14,7 +14,4 @@ export class ContactFormComponent {
 
   submitted = false;
 
-  onSubmit(){
-    this.submitted = true;
-  }
 }

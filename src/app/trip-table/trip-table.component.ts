@@ -39,9 +39,11 @@ export class TripTableComponent implements OnInit{
     this.date = whatever;
   }
 
-  // onUpdate(event){
-  //   console.log('update')
-  // }
+  updateTrip(trip){
+    console.log('update')
+    this.api.updateTrip(trip)
+    .subscribe(response => console.log(response))
+  }
 
   removeTrip(gone) {
     this.api.removeTrip(gone.id)

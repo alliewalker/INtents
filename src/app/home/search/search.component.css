@@ -14,7 +14,7 @@ h2 {
     align-content: center;
     justify-content: center;
     align-items: center;
-    left: 50%;
+    left: 40%;
     width: 20%;
     margin: 10px;
 }
@@ -23,6 +23,7 @@ h2 {
     border-radius: 10px;
     background-color: rgba(202, 228, 219);
     width: 40%;
+    left: 90px;
     position: relative;
     padding: 12px;
 
