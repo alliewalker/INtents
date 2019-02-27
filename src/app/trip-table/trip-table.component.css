@@ -1,8 +1,12 @@
 .tripPlan {
+    position: relative;
     background-color: #CAE4dB;
     font-family: 'Muli', sans-serif;
     border-radius: 10px;
     margin: 10px;
+    left: 55%;
+    height: 65%;
+    width: 35%;
 }
 
 th, td {
@@ -16,6 +20,7 @@ input {
     padding: 5px;
     position: relative;
 }
+
 
 .tableHead {
     text-align: center;

@@ -19,9 +19,9 @@ h2 {
 .search{
     border-radius: 10px;
     background-color: rgba(202, 228, 219);
-    /* width: 40%;
+    width: 40%;
     left: 90px;
-    position: relative;
+    /* position: relative; */
     padding: 12px;
-    top: -520px; */
+    top: -520px;
 }
