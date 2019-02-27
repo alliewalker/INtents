@@ -20,29 +20,6 @@ if(sessionStorage.getItem('token')) {
     })
   }
 }
-// let httpOptions;
-// if(sessionStorage.getItem('token')) {
-//   httpOptions = {
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json',
-//       'Authorization': sessionStorage.getItem('token')
-//     })
-//   }
-// } else {
-//    httpOptions = {
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json',
-//     })
-//   };
-// }
-
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type': 'application/json',
-//     authorization: sessionStorage.getItem("token")
-//   })
-// };
-
 
 @Injectable({
   providedIn: 'root'
