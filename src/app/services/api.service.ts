@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BASE_URL } from '../../environments/environment.prod'
 import { tap } from 'rxjs/operators';
+import { BASE_URL } from '../../environments/environment.prod'
+
 
 // let BASE_URL = 'https://jd-intentserver.herokuapp.com'
 
