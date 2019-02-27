@@ -10,10 +10,8 @@ import {
   MatTableModule,
   MatFormFieldModule,
   MatTooltipModule, 
-  MatDialogModule, 
-  MAT_DIALOG_DATA
 } from '@angular/material';
-import { NgbDatepickerModule, NgbPagination,  } from '@ng-bootstrap/ng-bootstrap'
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -56,9 +54,7 @@ import { FooterComponent } from './nav/footer/footer.component';
     FlexLayoutModule,
     FormsModule,
     NgbDatepickerModule,
-    /*NgbPagination,*/
     MatMenuModule,
-    MatDialogModule,
     MatButtonModule,
     MatTooltipModule,
     MatTableModule,
@@ -73,7 +69,7 @@ import { FooterComponent } from './nav/footer/footer.component';
     HttpClientModule
 
   ],
-exports: [/*ContactFormComponent*/],
+exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
