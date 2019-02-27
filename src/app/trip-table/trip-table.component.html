@@ -1,5 +1,7 @@
 <div class="tripPlan">
+    <h2 style="text-align: center">Book Your Next Adventure</h2>
 <app-calendar (onDateChange)="onDateChange($event)"></app-calendar>
+
 <form>
   <div class="form-group" style="text-align: center">
     <input mat-input class="form-control ml-2" type="text" name="location" [(ngModel)]="location" placeholder='Location'/>
@@ -27,15 +29,9 @@
       <td>{{ trip.location }}</td>
       <td>{{ trip.numberPeople }}</td>
 
-<<<<<<< HEAD
-      <td>
-        <button mat-icon-button (click)="open(content)"><mat-icon>update</mat-icon></button>
-      </td>
-=======
       <!-- <td>
         <button mat-icon-button (click)="updateTrip(trip)"><mat-icon>update</mat-icon></button>
       </td> -->
->>>>>>> 1b1102ec532ea93fafbba3b363d750808142a1e4
       <td>
         <button mat-icon-button (click)="removeTrip(trip)"><mat-icon>delete_outline</mat-icon></button>
       </td>

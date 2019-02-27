@@ -7,8 +7,8 @@ ngb-datepicker {
   padding: 4.5% 2% 0 2%;
   border-style: none;
   font-family: 'Muli', sans-serif;
-  padding-left: 30px;
-  top: -40px;
+  padding-left: 28px;
+  top: -50px;
 }
 
 .custom-day {
@@ -31,8 +31,4 @@ ngb-datepicker {
   
 .custom-day.faded {
   background-color: rgba(2, 117, 216, 0.5);
-}
-
-h2 {
-  width: 50%;
 }

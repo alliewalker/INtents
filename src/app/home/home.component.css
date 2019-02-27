@@ -3,3 +3,15 @@
     float: right;
     top: 11em;
 } */
+
+#home-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+#home-layout .home-column {
+    flex: 0 0 50%;
+}
+
+/* #home-layout .home-column:first-child {
+} */
